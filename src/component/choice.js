@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{Fragment} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -21,7 +21,7 @@ const Choice = () => {
           const classes = useStyles();
         
           return (
-            <div>
+            <Fragment>
               <Grid container>
                 <Grid item lg={6}>
             <Card className={classes.root}>
@@ -51,8 +51,7 @@ const Choice = () => {
             </Card>
             </Grid>
             </Grid>
-
-            </div>
+            </Fragment>
           );
         }
         

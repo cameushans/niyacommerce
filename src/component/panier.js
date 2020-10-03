@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Fragment,useEffect,useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -21,17 +21,28 @@ const useStyles = makeStyles({
 
 
 
-export default function BasicTable() {
+export default function BasicTable(props) {
   const classes = useStyles();
+  const [info,setInfo] = useState("");
 
+  useEffect(() => {
+    const fetching = async   () => {
+      fetch("http://localhost:1337/paniers")
+         .then((res)=>res.json())//toujours
+         .then((resu)=>setInfo(resu[0].type[0].name))
+     }
+     fetching()
+   }, [])
+   console.log(info)
+  
   return (
-      <div>
-      <Typography variant="h2" className={classes.centre}>Mon panier </Typography>
+      <Fragment>
+  <Typography variant="h2" className={classes.centre}>Mon panier </Typography>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Produit</TableCell>
+            <TableCell align="center">Produit</TableCell>
             <TableCell align="right">Quantité</TableCell>
             <TableCell align="right">Date</TableCell>
           </TableRow>
@@ -40,14 +51,21 @@ export default function BasicTable() {
             <TableRow >
               <TableCell component="th" scope="row">
               </TableCell>
+              <TableCell align="left"><img style={{width:"2%"}} src={info}></img></TableCell>
               <TableCell align="right"></TableCell>
+              <TableCell align="right">1</TableCell>
+            </TableRow>
+            <TableRow >
+              <TableCell component="th" scope="row">
+              </TableCell>
               <TableCell align="right"></TableCell>
+              <TableCell align="left"></TableCell>
               <TableCell align="right"></TableCell>
             </TableRow>
         </TableBody>
       </Table>
     </TableContainer>
     <Button color="primary">Valider la commande </Button>
-    </div>
+    </Fragment>
   );
 }

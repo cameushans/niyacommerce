@@ -1,6 +1,7 @@
-import React , { useState}from 'react';
+import React from 'react';
 import {Grid,makeStyles,Typography,Button} from "@material-ui/core";
 import {Link} from "react-router-dom";
+import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
 
 
 const Home = () =>{
@@ -52,6 +53,7 @@ const Home = () =>{
                   >
 
             <Grid container item className={classes.root}  onMouseEnter={()=>{console.log("raté")}}>
+                <CardGiftcardIcon/>
             <Typography  variant="h1">
             <Button  size="large">
                       <Link   className={classes.link}  to="/Shop" >Shop</Link> 

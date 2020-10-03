@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from '@material-ui/core';
+import {connect} from "react-redux";
 
 const useStyles = makeStyles({
   root: {
@@ -16,11 +17,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImgMediaCard(props) {
+function ImgMediaCard(props) {
   const classes = useStyles();
 
 
-  console.log(props)
+
+
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -43,11 +45,11 @@ export default function ImgMediaCard(props) {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+           Details
         </Button>
         <Link to="/choice" >
-        <Button size="small" color="primary" href="/choice">
-            Learn more
+        <Button size="small" color="primary" onClick={()=>{props.clickCkrease()}}>
+            Ajouter au panier
         </Button>
           </Link>
       </CardActions>
@@ -55,4 +57,14 @@ export default function ImgMediaCard(props) {
   );
 }
 
+
+function MapDispatchToProps(dispatch){
+  return {
+         clickCkrease : function (){
+               dispatch({type: "INCREASE"})
+         }
+     }
+}
+
+export default connect(null, MapDispatchToProps)(ImgMediaCard);
 
