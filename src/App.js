@@ -20,10 +20,10 @@ function App() {
 
   const useStyles = makeStyles({
     logo:{
-      width:"5%",
+      width:"35%",
       height:"3,5rem",
-      marginLeft:"8%",
-      marginRight:"20%"
+      display:"flex",
+      justifyContent:"flex-start"
       
     },
     bouton:{
@@ -49,6 +49,13 @@ function App() {
       display:"flex",
       justifyContent:"space-around",
       width:"50%"
+    },
+
+    panier:{
+      width:"10%",
+      height:"3,5rem",
+      display:"flex",
+      justifyContent:"flex-end"
     }
   })
  const  classes = useStyles()
@@ -76,15 +83,20 @@ function App() {
  console.log(info)
 
 return (
-    <ThemeProvider>
     <div className="App">
       <AppBar color="transparent" position="static"  style={{height:"8%"}}>
         <Toolbar>
-          <Avatar src="../niya.jpeg" className={classes.logo} />
+          <div className={classes.logo}>
+          <Avatar src="../niya.jpeg" style={{width:"11%"}} />
+          </div>
           <div className={classes.menu}>
           <Link className={classes.lien} to ="/"><Button className={classes.bouton}>Home</Button></Link>
           <Link className={classes.lien} to ="/shop"><Button className={classes.bouton}>Shop</Button></Link>
           <Link className={classes.lien} to ="/smile"><Button className={classes.bouton}>Smile</Button></Link>
+          
+          </div>
+          <div className={classes.panier}>
+            <ShoppingCartIcon  />
           </div>
 
           </Toolbar>
@@ -100,7 +112,6 @@ return (
             <Redirect to="/"/>
      </Switch>
     </div>
-    </ThemeProvider>
   );
 }
 

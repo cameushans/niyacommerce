@@ -60,7 +60,7 @@ const Home = () =>{
         },
 
         btnshop:{
-            background:"linear-gradient(#C5C9CC, #ffffff)"
+            background:"linear-gradient( #ffffff)"
         }
       });
       const classes = useStyles();

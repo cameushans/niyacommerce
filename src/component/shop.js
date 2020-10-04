@@ -14,7 +14,7 @@ const Shop = (props) => {
 
     return (
         <div>
-        <Typography style={{textAlign:"center"}} variant="h2">
+        <Typography style={{textAlign:"center", marginTop:"5%"}} variant="h2">
             Collections
         </Typography>
        <Grid   container direction="row" justify="center" alignItems="center"> 

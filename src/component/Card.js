@@ -7,7 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link } from '@material-ui/core';
+import { Link } from '@material-ui/core'; 
+import {connect} from "react-redux";
 
 const useStyles = makeStyles({
   root: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImgMediaCard(props) {
+ function ImgMediaCard(props) {
   const classes = useStyles();
 
 
@@ -28,7 +29,7 @@ export default function ImgMediaCard(props) {
           component="img"
           alt="Contemplative Reptile"
           height="140"
-          image={props.image}
+          image="../casquette.jpg"
           title="Contemplative Reptile"
         />
         <CardContent>
@@ -46,8 +47,8 @@ export default function ImgMediaCard(props) {
           Share
         </Button>
         <Link to="/choice" >
-        <Button size="small" color="primary" href="/choice">
-            Learn more
+        <Button size="small" color="primary" >
+            Ajouter au panier
         </Button>
           </Link>
       </CardActions>
@@ -56,3 +57,6 @@ export default function ImgMediaCard(props) {
 }
 
 
+
+
+export default ImgMediaCard
