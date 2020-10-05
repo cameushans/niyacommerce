@@ -27,8 +27,8 @@ const Shop = (props) => {
 
 
     return (
-        <Fragment>
-        <Typography style={{textAlign:"center"}} variant="h2">
+        <div>
+        <Typography style={{textAlign:"center", marginTop:"5%"}} variant="h2">
             Collections
         </Typography>
        <Grid   container direction="row" justify="center" alignItems="center"> 
@@ -51,7 +51,7 @@ const Shop = (props) => {
                   <ImgMediaCard  image={info} />
            </Grid>
        </Grid>
-       </Fragment>
+       </div>
     )
 }
 

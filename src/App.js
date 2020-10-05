@@ -5,31 +5,30 @@ import {Switch,Route, Redirect} from "react-router-dom"
 import Shop from "./component/shop"
 import Smile from "./component/smile"
 import Choice from "./component/choice"
-import {makeStyles} from "@material-ui/core";
+import {makeStyles,AppBar,Toolbar,Avatar,Button} from "@material-ui/core";
 import BasicTable from "./component/panier";
 import Header from "./component/Header";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart"
 import { createStore ,applyMiddleware,combineReducers} from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";//must be the last middleware in chain, otherwise it will log thunk and promise, not actual actions 
-import count from "./reducers/count.reducer"
+import count from "./reducers/count.reducer";
+import hide from "./reducers/hide.reducer"
 
 
-const store = createStore(combineReducers({count}),applyMiddleware(logger));
+const store = createStore(combineReducers({count,hide}),applyMiddleware(logger));
   
 function App() {
   const [infos,setInfo] = useState("");
 
-  const useStyles = makeStyles({
-    logo:{
-      width:"5%",
-      height:"60%"
-    }
-  });
+
+
 
 
 return (
-    <Provider store={store}>
-      <Header />
+    <Provider className="App"  store={store}>
+      <div className="App">
+      <Header/>
       <Switch>
             <Route   exact={true} path="/" component={Home}/>
             <Route   exact={true} path="/shop" >
@@ -42,6 +41,7 @@ return (
             </Route>
             <Redirect to="/"/>
      </Switch>
+     </div>
     </Provider>
   );
 }

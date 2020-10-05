@@ -51,7 +51,7 @@ export default function BasicTable(props) {
             <TableRow >
               <TableCell component="th" scope="row">
               </TableCell>
-              <TableCell align="left"><img style={{width:"2%"}} src={info}></img></TableCell>
+              <TableCell align="left"></TableCell>
               <TableCell align="right"></TableCell>
               <TableCell align="right">1</TableCell>
             </TableRow>
