@@ -1,6 +1,6 @@
 import React ,{Fragment,useState} from 'react';
 import {Link} from "react-router-dom"
-import {makeStyles,AppBar,Toolbar,Avatar,Button,Badge,Grid, Typography,Divider} from "@material-ui/core";
+import {makeStyles,AppBar,Toolbar,Avatar,Button,Badge,Grid, Typography,Divider,List,ListItem} from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart"
 import {connect} from "react-redux";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -93,10 +93,21 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
              <ShoppingCartIcon onClick={()=>{if(hide){setHide(!hide);props.hideMenu()}else{setHide(!hide);props.showMenu()}}} />
        </Badge>
           <Grid container direction="column" className={classes.hidden} >
-                <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
-                <Divider/>
-                <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
-                <Divider/>
+            <List>
+              <ListItem>
+                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
+              </ListItem>
+              <ListItem>
+                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
+              </ListItem>
+              <ListItem>
+                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
+              </ListItem>
+              <ListItem>
+                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
+              </ListItem>
+            </List>
+            
                      <Button variant ="contained" color="primary" href="/panier">Check ton panier</Button>
           </Grid>
       </Toolbar>
