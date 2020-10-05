@@ -13,7 +13,8 @@ import { createStore ,applyMiddleware,combineReducers} from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";//must be the last middleware in chain, otherwise it will log thunk and promise, not actual actions 
 import count from "./reducers/count.reducer";
-import hide from "./reducers/hide.reducer"
+import hide from "./reducers/hide.reducer";
+import Hooks from "./component/testHooks"
 
 
 const store = createStore(combineReducers({count,hide}),applyMiddleware(logger));
@@ -37,11 +38,12 @@ return (
             <Route   exact={true} path="/smile" component={Smile}/>
             <Route   exact={true} path="/choice" component={Choice}/>
             <Route   exact={true} path="/panier">
-              <BasicTable image={infos}/>
+                <BasicTable image={infos}/>
             </Route>
             <Redirect to="/"/>
      </Switch>
      </div>
+     <Hooks />
     </Provider>
   );
 }

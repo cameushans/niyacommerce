@@ -97,12 +97,15 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
               <ListItem>
                   <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
               </ListItem>
+              <Divider/>
               <ListItem>
                   <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
               </ListItem>
+              <Divider/>
               <ListItem>
                   <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
               </ListItem>
+              <Divider/>
               <ListItem>
                   <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
               </ListItem>
