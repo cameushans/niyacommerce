@@ -45,7 +45,7 @@ function ImgMediaCard(props) {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-           Details
+          Voir
         </Button>
         <Link to="/choice" >
         <Button size="small" color="primary" onClick={()=>{props.clickCkrease()}}>

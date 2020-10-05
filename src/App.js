@@ -7,14 +7,17 @@ import Smile from "./component/smile"
 import Choice from "./component/choice"
 import {makeStyles,AppBar,Toolbar,Avatar,Button} from "@material-ui/core";
 import BasicTable from "./component/panier";
-import Header from "./component/Header";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart"
-import { createStore ,applyMiddleware,combineReducers} from "redux";
-import { Provider } from "react-redux";
-import logger from "redux-logger";//must be the last middleware in chain, otherwise it will log thunk and promise, not actual actions 
-import count from "./reducers/count.reducer";
+import {MuiThemeProvider,ThemeProvider} from "@material-ui/core"
+import HomeIcon from '@material-ui/icons/Home';
+import Investissement from './component/Investissement';
 import hide from "./reducers/hide.reducer";
-import Hooks from "./component/testHooks"
+import count from "./reducers/count.reducer";
+import logger from "redux-logger";
+import { Provider } from "react-redux";
+import { createStore ,applyMiddleware,combineReducers} from "redux";
+import Header from "./component/Header";
+
+
 
 
 const store = createStore(combineReducers({count,hide}),applyMiddleware(logger));
@@ -35,15 +38,14 @@ return (
             <Route   exact={true} path="/shop" >
                  <Shop  />
               </Route>
-            <Route   exact={true} path="/smile" component={Smile}/>
-            <Route   exact={true} path="/choice" component={Choice}/>
-            <Route   exact={true} path="/panier">
-                <BasicTable image={infos}/>
-            </Route>
+            <Route    exact={true} path="/smile" component={Smile}/>
+            <Route    exact={true} path="/choice" component={Choice}/>
+            <Route    exact={true} path="/panier" component={BasicTable}/>
+            <Route    exact={true} path="/investissement" component={Investissement}/>
+
             <Redirect to="/"/>
      </Switch>
      </div>
-     <Hooks />
     </Provider>
   );
 }

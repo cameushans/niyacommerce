@@ -4,45 +4,74 @@ import Button from '@material-ui/core/Button';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import {Link} from "react-router-dom";
+
 
 const UseStyle = makeStyles({
    
-Jerry:{
-    height:"50%",
-    borderRadius:"30px"
+invest:{
+    height:"30%",
+    width:"100%",
+    backgroundImage:"url('../../inves.jpg')",
+
+    borderRadius:"10px",
+    boxShadow:"5px 5px 5px black",
+    
+    
+    
     
 },
 
-taille:{
+conteneur:{
 height:"100%",
 width:"100%",
-marginTop:"5%",
+opacity:"0.7",
+backgroundImage:"url('../../sourireee.jpg')",
+backgroundRepeat:"no-repeat",
+backgroundSize:"cover"
+
+
 
 },
 
-yellow:{
+
+contenu:{
+    height:"100%",
+    width:"100%"
+},
+
+buttninvest:{
+    fontWeight:"bolder",
+    fontSize:"20px",
+    color:"red",
+    fontFamily:"Sansita Swashed, cursive",
+    backgroundColor:"black"
+
+},
+abv:{
     height:"30%",
-    backgroundColor:"yellow"
+    width:"100%",
+    borderRadius:"10px",
+    boxShadow:"5px 5px 5px black",
+    backgroundImage:"url('../../don.jpg')",
+backgroundRepeat:"no-repeat",
+backgroundSize:"cover"
+
 },
 
-black:{
-    height:"20%",
-    width:"30%",
+ buttnabv:{
+    fontWeight:"bolder",
+    fontSize:"20px",
+    color:"red",
+    fontFamily:"Sansita Swashed, cursive",
     backgroundColor:"white"
+
 },
 
-green:{
-    height:"20%",
-    width:"30%",
-    backgroundColor:"green",
-},
-
-white:{
-    height:"20%",
-    width:"30%",
-    backgroundColor:"white",
+invesslien:{
+    textDecoration:"none"
 }
-    
+
 })
 
 const Smile = () => {
@@ -52,30 +81,29 @@ const Smile = () => {
 
     return (
 
-        <Grid container className={classes.taille}>
-            <Grid item container style={{backgroundColor:"blue"}} className={classes.Jerry} justify="flex-start" direction="row" alignItems="center" lg={12}>
-                <Grid item className={classes.yellow} container justify="center" lg={12}>
-                    <h1>Jerry</h1>
-                </Grid>
-                <Grid item className={classes.black} lg={6}>
-                    <h1>Hans</h1>
-                </Grid>
-                <Grid item className={classes.green} lg={6}>
-                    <h1>Rayane</h1>
-                </Grid>
-                <Grid item className={classes.white} lg={6}>
-                    <h1>Unknown</h1>
-                </Grid>
+        <Grid container className={classes.conteneur}>
+            <Grid container className={classes.contenu} alignItems="center" justify="center" justify="space-evenly">
                 
-            </Grid>
-            <Grid item container className={classes.Jerry} justify="center" alignItems="center" lg={6}>
-                <h1>Jerry</h1>
-            </Grid>
-            <Grid item container justify="center" lg={3}>
-                <h1>Jerry</h1>
-            </Grid>
+            <Grid item container className={classes.invest} lg={4} sm={5} alignItems="center" justify="center" direction="column" justify="space-around">
+                <h1>Vos investissements</h1>
+                <Link to="/investissement" className={classes.invesslien}>
+                <Button  className={classes.buttninvest}>Où vont-ils ?</Button>
+                </Link>
 
-        </Grid>
+            </Grid>
+            <Grid item container className={classes.abv} lg={4} sm={5} alignItems="center" justify="center" direction="column" justify="space-around">
+                <h1>Au bon vouloir</h1>
+                <Button variant="outlined" className={classes.buttnabv}>En savoir plus</Button>
+
+             </Grid>
+            
+            </Grid>
+            
+           </Grid>
+            
+
+
+            
             
 
 
