@@ -44,7 +44,7 @@ const useStyles = makeStyles({
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Voir
         </Button>
         <Link to="/choice" >
         <Button size="small" color="primary" >

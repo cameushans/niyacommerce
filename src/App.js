@@ -10,6 +10,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import BasicTable from "./component/panier";
 import {MuiThemeProvider,ThemeProvider} from "@material-ui/core"
 import HomeIcon from '@material-ui/icons/Home';
+import Investissement from './component/Investissement';
 
 
 
@@ -93,6 +94,7 @@ return (
           <Link className={classes.lien} to ="/"><Button className={classes.bouton}>Home</Button></Link>
           <Link className={classes.lien} to ="/shop"><Button className={classes.bouton}>Shop</Button></Link>
           <Link className={classes.lien} to ="/smile"><Button className={classes.bouton}>Smile</Button></Link>
+          <Link className={classes.lien} to ="/investissement"><Button className={classes.bouton}>Investissements</Button></Link>
           
           </div>
           <div className={classes.panier}>
@@ -109,6 +111,8 @@ return (
             <Route    exact={true} path="/smile" component={Smile}/>
             <Route    exact={true} path="/choice" component={Choice}/>
             <Route    exact={true} path="/panier" component={BasicTable}/>
+            <Route    exact={true} path="/investissement" component={Investissement}/>
+
             <Redirect to="/"/>
      </Switch>
     </div>
