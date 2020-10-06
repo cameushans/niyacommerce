@@ -8,13 +8,37 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import {Typography,Button} from "@material-ui/core"
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
   centre:{
-      textAlign:"center"
+      textAlign:"center",
+      marginTop:"3%"
+  },
+
+  btncmd:{
+    width:"20%",
+    height:"10%",
+    justifyContent:"center",
+    
+  },
+
+  panier:{
+    width:"100%",
+    height:"50%",
+    justifyContent:"center",
+    flexDirection:"column",
+    alignItems:"center",
+    justifyContent:"space-evenly"
+  },
+  valider:{
+    backgroundColor:"white",
+      width:"100%",
+    fontFamily:"Sansita Swashed, cursive",
+    color:"black"
   }
 });
 
@@ -38,22 +62,39 @@ export default function BasicTable(props) {
   return (
       <Fragment>
   <Typography variant="h2" className={classes.centre}>Mon panier </Typography>
-    <TableContainer component={Paper}>
+  <Grid container className={classes.panier} lg={12}>
+    <TableContainer component={Paper} style={{ width:"80%",background:"linear-gradient(#9575cd,#bdbdbd)"}}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
-          <TableRow>
-            <TableCell align="center">Produit</TableCell>
-            <TableCell align="right">Quantité</TableCell>
-            <TableCell align="right">Date</TableCell>
+          <TableRow> 
+          <TableCell component="th" scope="row">
+              </TableCell>
+            <TableCell align="left"><h3>Produits</h3></TableCell>
+            <TableCell align="center"><h3>Quantité</h3></TableCell>
+            <TableCell align="right"><h3>Date</h3></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
             <TableRow >
               <TableCell component="th" scope="row">
               </TableCell>
-              <TableCell align="left"></TableCell>
-              <TableCell align="right"></TableCell>
-              <TableCell align="right">1</TableCell>
+              <TableCell align="left">Casquette</TableCell>
+              <TableCell align="center">5</TableCell>
+              <TableCell align="right">05/10/2020</TableCell>
+            </TableRow>
+            <TableRow >
+              <TableCell component="th" scope="row">
+              </TableCell>
+              <TableCell align="left">Jogging</TableCell>
+              <TableCell align="center">2</TableCell>
+              <TableCell align="right">05/10/2020</TableCell>
+            </TableRow>
+            <TableRow >
+              <TableCell component="th" scope="row">
+              </TableCell>
+              <TableCell align="left">Huile</TableCell>
+              <TableCell align="center">7</TableCell>
+              <TableCell align="right">05/10/2020</TableCell>
             </TableRow>
             <TableRow >
               <TableCell component="th" scope="row">
@@ -65,7 +106,11 @@ export default function BasicTable(props) {
         </TableBody>
       </Table>
     </TableContainer>
-    <Button color="primary">Valider la commande </Button>
+    <Grid container className={classes.btncmd}>
+    <Button className={classes.valider} color="primary">Valider</Button>
+    </Grid>
+    </Grid>
+    
     </Fragment>
   );
 }

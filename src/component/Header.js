@@ -55,11 +55,13 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
     hidden:{
       width:"200px",
-      backgroundColor:"white",
+      background:"linear-gradient(#9575cd,#bdbdbd)",
       height:"360px",
       position:"relative",
       marginTop:"430px",
-      visibility:props.hide
+      visibility:props.hide,
+      zIndex:"5",
+      borderRadius:"20px"
       
     },
     img:{
@@ -71,7 +73,27 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
     appbar:{
       height:"8%"
-    }
+    },
+
+    shoppcard:{
+      cursor:"pointer"
+    },
+
+    btnpanier:{
+      backgroundColor:"white",
+      width:"50%",
+    fontFamily:"Sansita Swashed, cursive",
+    color:"black",
+
+
+    },
+conteneurbtn:{
+  width:"100%",
+  justifyContent:"center",
+  alignItems:"center",
+  height:"20%"
+}
+    
   });
   const classes = useStyles()
 
@@ -90,7 +112,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
       
       </div>
        <Badge badgeContent={props.count} color="error">
-             <ShoppingCartIcon onClick={()=>{if(hide){setHide(!hide);props.hideMenu()}else{setHide(!hide);props.showMenu()}}} />
+             <ShoppingCartIcon className={classes.shoppcard} onClick={()=>{if(hide){setHide(!hide);props.hideMenu()}else{setHide(!hide);props.showMenu()}}} />
        </Badge>
           <Grid container direction="column" className={classes.hidden} >
             <List>
@@ -110,8 +132,11 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
                   <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
               </ListItem>
             </List>
-            
-                     <Button variant ="contained" color="primary" href="/panier">Check ton panier</Button>
+            <Divider/>
+
+                    <Grid item container className={classes.conteneurbtn}>
+                     <Button variant ="outlined" className={classes.btnpanier} href="/panier" size="small">Voir panier</Button>
+                     </Grid>
           </Grid>
       </Toolbar>
    </AppBar>

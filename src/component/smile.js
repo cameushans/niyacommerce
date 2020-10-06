@@ -85,7 +85,7 @@ const Smile = () => {
             <Grid container className={classes.contenu} alignItems="center" justify="center" justify="space-evenly">
                 
             <Grid item container className={classes.invest} lg={4} sm={5} alignItems="center" justify="center" direction="column" justify="space-around">
-                <h1>Vos investissements</h1>
+                <h1>Vos dons</h1>
                 <Link to="/investissement" className={classes.invesslien}>
                 <Button  className={classes.buttninvest}>Où vont-ils ?</Button>
                 </Link>
