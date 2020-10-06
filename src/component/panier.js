@@ -11,12 +11,11 @@ import {Typography,Button} from "@material-ui/core"
 import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
+
   centre:{
       textAlign:"center",
-      marginTop:"3%"
+      marginTop:"3%",
+      marginBottom:"5%"
   },
 
   btncmd:{
@@ -27,16 +26,15 @@ const useStyles = makeStyles({
   },
 
   panier:{
-    width:"100%",
     height:"50%",
     justifyContent:"center",
     flexDirection:"column",
     alignItems:"center",
-    justifyContent:"space-evenly"
+    justifyContent:"space-around"
   },
   valider:{
-    backgroundColor:"white",
-      width:"100%",
+    backgroundColor:"#81c784",
+      width:"50%",
     fontFamily:"Sansita Swashed, cursive",
     color:"black"
   }
@@ -63,8 +61,8 @@ export default function BasicTable(props) {
       <Fragment>
   <Typography variant="h2" className={classes.centre}>Mon panier </Typography>
   <Grid container className={classes.panier} lg={12}>
-    <TableContainer component={Paper} style={{ width:"80%",background:"linear-gradient(#9575cd,#bdbdbd)"}}>
-      <Table className={classes.table} aria-label="simple table">
+    <TableContainer component={Paper} style={{ width:"80%",boxShadow:"5px 5px 20px 5px"}}>
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow> 
           <TableCell component="th" scope="row">
@@ -107,7 +105,7 @@ export default function BasicTable(props) {
       </Table>
     </TableContainer>
     <Grid container className={classes.btncmd}>
-    <Button className={classes.valider} color="primary">Valider</Button>
+    <Button variant="contained" className={classes.valider} color="#050F5A">Valider</Button>
     </Grid>
     </Grid>
     

@@ -24,10 +24,10 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
     bouton:{
       textDecoration:"none",
-      fontFamily:"Sansita Swashed, cursive",
       display:"flex",
       justifyContent:"space-between",
       color:"black",
+      fontWeight:"bold"
     
 
     },
@@ -44,7 +44,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     menu:{
       display:"flex",
       justifyContent:"space-around",
-      width:"50%"
+      width:"60%"
     },
 
     panier:{
@@ -76,7 +76,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
 
     shoppcard:{
-      cursor:"pointer"
+      cursor:"pointer",
     },
 
     btnpanier:{
