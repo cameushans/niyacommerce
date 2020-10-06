@@ -55,7 +55,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
     hidden:{
       width:"200px",
-      background:"linear-gradient(#9575cd,#bdbdbd)",
+      background:"linear-gradient(#6B268C,#bdbdbd)",
       height:"360px",
       position:"relative",
       marginTop:"430px",

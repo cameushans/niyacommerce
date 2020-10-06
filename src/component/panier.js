@@ -70,6 +70,8 @@ export default function BasicTable(props) {
             <TableCell align="left"><h3>Produits</h3></TableCell>
             <TableCell align="center"><h3>Quantité</h3></TableCell>
             <TableCell align="right"><h3>Date</h3></TableCell>
+            <TableCell align="right"><h3>Prix</h3></TableCell>
+
           </TableRow>
         </TableHead>
         <TableBody>
@@ -79,6 +81,8 @@ export default function BasicTable(props) {
               <TableCell align="left">Casquette</TableCell>
               <TableCell align="center">5</TableCell>
               <TableCell align="right">05/10/2020</TableCell>
+              <TableCell align="right">78€</TableCell>
+
             </TableRow>
             <TableRow >
               <TableCell component="th" scope="row">
@@ -86,6 +90,8 @@ export default function BasicTable(props) {
               <TableCell align="left">Jogging</TableCell>
               <TableCell align="center">2</TableCell>
               <TableCell align="right">05/10/2020</TableCell>
+              <TableCell align="right">54€</TableCell>
+
             </TableRow>
             <TableRow >
               <TableCell component="th" scope="row">
@@ -93,6 +99,8 @@ export default function BasicTable(props) {
               <TableCell align="left">Huile</TableCell>
               <TableCell align="center">7</TableCell>
               <TableCell align="right">05/10/2020</TableCell>
+              <TableCell align="right">30€</TableCell>
+
             </TableRow>
             <TableRow >
               <TableCell component="th" scope="row">

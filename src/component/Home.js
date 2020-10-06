@@ -56,7 +56,7 @@ const Home = () =>{
         },
 
         btnsmile:{
-            background:"linear-gradient(#ffffff,#050F5A)"
+            background:"linear-gradient(#ffffff,#6B268C)"
         },
 
         btnshop:{
