@@ -5,14 +5,14 @@ import {connect} from "react-redux";
 
 
 const Shop = (props) => {
-    
+       const [hide,setHide] = useState(false)
        const [info,setInfo] = useState("");
 
        const useStyles = makeStyles({
         taille:{
         marginTop:"10%"
         }
-    })
+        })
     
     const classes = useStyles();
 
@@ -27,7 +27,7 @@ const Shop = (props) => {
 
 
     return (
-        <div>
+        <div onClick={()=>{setHide(false);props.hideMenu()}}>
         <Typography style={{textAlign:"center", marginTop:"5%"}} variant="h2">
             Collections
         </Typography>
@@ -55,13 +55,12 @@ const Shop = (props) => {
     )
 }
 
-function MapDispatchToProps(dispatch){
-    return {
-           clickCkrease : function (){
-                 dispatch({type: "INCREASE"})
-           }
+function mapDispatchToProps(dispatch){
+       return {
+       hideMenu: function(){
+            dispatch({type:"HIDE"})
        }
-
+     }
 }
 
-export default connect(null, MapDispatchToProps)(Shop);
+export default connect(null, mapDispatchToProps)(Shop);

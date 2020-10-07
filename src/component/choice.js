@@ -16,41 +16,25 @@ const Choice = () => {
         taille:{
         marginTop:"10%",
         height:"100%"
+        },
+        pivote:{
+          
         }
     })
           const classes = useStyles();
         
           return (
             <Fragment>
-              <Grid container>
-                <Grid item lg={6}>
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  height="140"
-                  image="../../eiv3578-8091-casquette-randonnee-homme-newton-4-0-noir.jpg"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary" href="/choice">
-                    <Link to="/choice" >Ajouter au panier</Link>
-                </Button>
-              </CardActions>
-            </Card>
-            </Grid>
-            </Grid>
+              <Grid container >
+                <Grid container item lg={3}>
+                  <img className={classes.pivote} src="../../casquette.jpg"></img>
+                </Grid>
+                <Grid container item lg={3}>
+                  <img className={classes.pivote} src="../../casquette.jpg"></img>
+                </Grid>
+              </Grid>
+      
+    
             </Fragment>
           );
         }

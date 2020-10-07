@@ -31,7 +31,7 @@ function App() {
 
 return (
     <Provider className="App"  store={store}>
-      <div className="App">
+      <div className="App" onClick={()=>console.log("voila")}>
       <Header/>
       <Switch>
             <Route   exact={true} path="/" component={Home}/>
@@ -49,5 +49,7 @@ return (
     </Provider>
   );
 }
+
+
 
 export default App;

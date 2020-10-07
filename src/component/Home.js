@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Grid,makeStyles,Typography,Button} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
+import {connect} from "react-redux";
 
 
-const Home = () =>{
+const Home = (props) =>{
+    const [hide,setHide] = useState(false)
+
 
     const useStyles = makeStyles({
         root: {
@@ -70,6 +73,7 @@ const Home = () =>{
              direction="row"
              justify="center"
              className={classes.contient}
+             onClick={()=>{setHide(false);props.hideMenu()}}
                   >
 
             <Grid container item direction="column" className={classes.root}  onMouseEnter={()=>{console.log("raté")}}>
@@ -102,4 +106,17 @@ const Home = () =>{
     )
 }
 
-export default Home;
+function mapDispatchToProps(dispatch){
+    return {
+    showMenu: function(){
+          dispatch({type:"SHOW"})
+    } ,
+    hideMenu: function(){
+         dispatch({type:"HIDE"})
+    }
+  
+  }
+  }
+  
+
+  export default connect(null, mapDispatchToProps)(Home);

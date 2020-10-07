@@ -59,7 +59,8 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
       height:"360px",
       position:"relative",
       marginTop:"430px",
-      visibility:props.hide
+      visibility:props.hide,
+      zIndex:5
       
     },
     img:{
@@ -84,9 +85,9 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
       <Avatar src="../niya.jpeg" className={classes.avatar} />
       </div>
       <div className={classes.menu}>
-      <Link className={classes.lien} to ="/"><Button className={classes.bouton}>Home</Button></Link>
-      <Link className={classes.lien} to ="/shop"><Button className={classes.bouton}>Shop</Button></Link>
-      <Link className={classes.lien} to ="/smile"><Button className={classes.bouton}>Smile</Button></Link>
+      <Link className={classes.lien} to ="/"  onClick={()=>{setHide(false);props.hideMenu()}}><Button className={classes.bouton} >Home</Button></Link>
+      <Link className={classes.lien} to ="/shop"   onClick={()=>{setHide(false);props.hideMenu()}}><Button className={classes.bouton}>Shop</Button></Link>
+      <Link className={classes.lien} to ="/smile"   onClick={()=>{setHide(false);props.hideMenu()}}><Button className={classes.bouton}>Smile</Button></Link>
       
       </div>
        <Badge badgeContent={props.count} color="error">
