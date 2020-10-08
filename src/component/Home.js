@@ -23,7 +23,7 @@ const Home = (props) =>{
           color:"white",
         },
         rootTwo: {
-            backgroundImage:"url(' ../../vagues.jpg')",
+            backgroundImage:"url(' ../../paysagev.jpg')",
             backgroundRepeat:"no-repeat",
             backgroundSize:"cover",
 
@@ -59,7 +59,7 @@ const Home = (props) =>{
         },
 
         btnsmile:{
-            background:"linear-gradient(#ffffff, #FFA858)"
+            background:"linear-gradient(#ffffff,#6B268C)"
         },
 
         btnshop:{

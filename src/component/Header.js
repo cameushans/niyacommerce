@@ -24,10 +24,10 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
     bouton:{
       textDecoration:"none",
-      fontFamily:"Sansita Swashed, cursive",
       display:"flex",
       justifyContent:"space-between",
       color:"black",
+      fontWeight:"bold"
     
 
     },
@@ -44,7 +44,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     menu:{
       display:"flex",
       justifyContent:"space-around",
-      width:"50%"
+      width:"60%"
     },
 
     panier:{
@@ -55,12 +55,13 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
     hidden:{
       width:"200px",
-      backgroundColor:"white",
+      background:"linear-gradient(#6B268C,#bdbdbd)",
       height:"360px",
       position:"relative",
       marginTop:"430px",
       visibility:props.hide,
-      zIndex:5
+      zIndex:"5",
+      borderRadius:"20px"
       
     },
     img:{
@@ -72,9 +73,43 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
     appbar:{
       height:"8%"
-    }
+    },
+
+    shoppcard:{
+      cursor:"pointer",
+    },
+
+    btnpanier:{
+      backgroundColor:"white",
+      width:"50%",
+    fontFamily:"Sansita Swashed, cursive",
+    color:"black",
+
+
+    },
+conteneurbtn:{
+  width:"100%",
+  justifyContent:"center",
+  alignItems:"center",
+  height:"20%"
+}
+    
   });
   const classes = useStyles()
+
+  var aff = ["../../casquette.jpg","../../casquette.jpg","../../casquette.jpg","../../casquette.jpg",]
+
+  var renvoi = aff.map((el)=>{
+     return  (
+       <Fragment>
+            <ListItem>
+           <img  className={classes.img} alt="casquette"  src={el}/>
+       </ListItem>
+       <Divider/>
+       </Fragment>
+           )
+  })
+     
 
 
  return   (
@@ -91,28 +126,15 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
       
       </div>
        <Badge badgeContent={props.count} color="error">
-             <ShoppingCartIcon onClick={()=>{if(hide){setHide(!hide);props.hideMenu()}else{setHide(!hide);props.showMenu()}}} />
+             <ShoppingCartIcon className={classes.shoppcard} onClick={()=>{if(hide){setHide(!hide);props.hideMenu()}else{setHide(!hide);props.showMenu()}}} />
        </Badge>
           <Grid container direction="column" className={classes.hidden} >
             <List>
-              <ListItem>
-                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
-              </ListItem>
-              <Divider/>
-              <ListItem>
-                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
-              </ListItem>
-              <Divider/>
-              <ListItem>
-                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
-              </ListItem>
-              <Divider/>
-              <ListItem>
-                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
-              </ListItem>
+                {renvoi}
             </List>
-            
-                     <Button variant ="contained" color="primary" href="/panier">Check ton panier</Button>
+                    <Grid item container className={classes.conteneurbtn}>
+                     <Button variant ="outlined" className={classes.btnpanier} href="/panier" size="small">Voir panier</Button>
+                     </Grid>
           </Grid>
       </Toolbar>
    </AppBar>

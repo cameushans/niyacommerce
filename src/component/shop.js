@@ -24,6 +24,15 @@ const Shop = (props) => {
         }
         fetching()
       }, [])
+      
+
+
+     var aff = ["jerry","hans","rayan","caucase","double","salop"]
+
+   var renvoi = aff.map((el)=>{
+            return <ImgMediaCard nom={el}/>
+   })
+      
 
 
     return (
@@ -32,24 +41,7 @@ const Shop = (props) => {
             Collections
         </Typography>
        <Grid   container direction="row" justify="center" alignItems="center"> 
-           <Grid classeName={classes.taille}  container justify="center" item lg={4}>
-                  <ImgMediaCard image={info} />
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info} />
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info}/>
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info}/>
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info}/>
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info} />
-           </Grid>
+           {renvoi}
        </Grid>
        </div>
     )

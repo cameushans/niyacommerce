@@ -27,8 +27,6 @@ function App() {
 
 
 
-
-
 return (
     <Provider className="App"  store={store}>
       <div className="App" onClick={()=>console.log("voila")}>

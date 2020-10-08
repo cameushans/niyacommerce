@@ -7,8 +7,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link } from '@material-ui/core';
+import { Link } from '@material-ui/core'; 
 import {connect} from "react-redux";
+import {Grid}  from "@material-ui/core"
 
 const useStyles = makeStyles({
   root: {
@@ -17,13 +18,13 @@ const useStyles = makeStyles({
   },
 });
 
-function ImgMediaCard(props) {
+ function ImgMediaCard(props) {
   const classes = useStyles();
 
 
-
-
+  console.log(props)
   return (
+    <Grid classeName={classes.taille}  container justify="center" item lg={4}>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -35,7 +36,7 @@ function ImgMediaCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+             {props.nom}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
@@ -44,18 +45,21 @@ function ImgMediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button  size="small" color="primary">
           Voir
         </Button>
         <Link to="/choice" >
-        <Button size="small" color="primary" onClick={()=>{props.clickCkrease()}}>
+        <Button size="small" color="primary" onClick={()=>{props.clickCkrease()}} >
             Ajouter au panier
         </Button>
           </Link>
       </CardActions>
     </Card>
+    </Grid>
   );
 }
+
+
 
 
 function MapDispatchToProps(dispatch){
@@ -67,4 +71,3 @@ function MapDispatchToProps(dispatch){
 }
 
 export default connect(null, MapDispatchToProps)(ImgMediaCard);
-
