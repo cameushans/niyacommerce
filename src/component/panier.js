@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import {Typography,Button} from "@material-ui/core"
 import { Grid } from '@material-ui/core';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 const useStyles = makeStyles({
 
@@ -71,6 +72,8 @@ export default function BasicTable(props) {
             <TableCell align="center"><h3>Quantité</h3></TableCell>
             <TableCell align="right"><h3>Date</h3></TableCell>
             <TableCell align="right"><h3>Prix</h3></TableCell>
+            <TableCell align="right"><h3>Retirer</h3></TableCell>
+
 
           </TableRow>
         </TableHead>
@@ -82,6 +85,8 @@ export default function BasicTable(props) {
               <TableCell align="center">5</TableCell>
               <TableCell align="right">05/10/2020</TableCell>
               <TableCell align="right">78€</TableCell>
+              <TableCell align="right"><HighlightOffIcon /></TableCell>
+
 
             </TableRow>
             <TableRow >
@@ -91,6 +96,8 @@ export default function BasicTable(props) {
               <TableCell align="center">2</TableCell>
               <TableCell align="right">05/10/2020</TableCell>
               <TableCell align="right">54€</TableCell>
+              <TableCell align="right"><HighlightOffIcon /></TableCell>
+
 
             </TableRow>
             <TableRow >
@@ -100,6 +107,8 @@ export default function BasicTable(props) {
               <TableCell align="center">7</TableCell>
               <TableCell align="right">05/10/2020</TableCell>
               <TableCell align="right">30€</TableCell>
+              <TableCell align="right"><HighlightOffIcon /></TableCell>
+
 
             </TableRow>
             <TableRow >

@@ -84,14 +84,14 @@ const Smile = () => {
         <Grid container className={classes.conteneur}>
             <Grid container className={classes.contenu} alignItems="center" justify="center" justify="space-evenly">
                 
-            <Grid item container className={classes.invest} lg={4} sm={5} alignItems="center" justify="center" direction="column" justify="space-around">
+            <Grid item container className={classes.invest} lg={4} sm={5} alignItems="center"  direction="column" justify="space-around">
                 <h1>Vos dons</h1>
                 <Link to="/investissement" className={classes.invesslien}>
                 <Button  className={classes.buttninvest}>Où vont-ils ?</Button>
                 </Link>
 
             </Grid>
-            <Grid item container className={classes.abv} lg={4} sm={5} alignItems="center" justify="center" direction="column" justify="space-around">
+            <Grid item container className={classes.abv} lg={4} sm={5} alignItems="center" direction="column" justify="space-around">
                 <h1>Au bon vouloir</h1>
                 <Button variant="outlined" className={classes.buttnabv}>En savoir plus</Button>
 
