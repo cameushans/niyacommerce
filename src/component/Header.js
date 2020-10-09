@@ -55,7 +55,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
     hidden:{
       width:"200px",
-      background:"linear-gradient(#6B268C,#bdbdbd)",
+      backgroundColor:"white",
       height:"360px",
       position:"relative",
       marginTop:"430px",
@@ -80,18 +80,16 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
     },
 
     btnpanier:{
-      backgroundColor:"white",
-      width:"50%",
-    fontFamily:"Sansita Swashed, cursive",
-    color:"black",
+      width:"100%",
+    color:"white",
 
 
     },
 conteneurbtn:{
   width:"100%",
-  justifyContent:"center",
-  alignItems:"center",
-  height:"20%"
+  flexDirection:"column",
+  justifyContent:"flex-end",
+  height:"27.4%"
 }
     
   });
@@ -133,7 +131,7 @@ conteneurbtn:{
                 {renvoi}
             </List>
                     <Grid item container className={classes.conteneurbtn}>
-                     <Button variant ="outlined" className={classes.btnpanier} href="/panier" size="small">Voir panier</Button>
+                     <Button variant ="contained" color="primary"  className={classes.btnpanier} href="/panier" sm={12} size="small">Voir panier</Button>
                      </Grid>
           </Grid>
       </Toolbar>
