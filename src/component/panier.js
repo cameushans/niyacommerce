@@ -47,7 +47,7 @@ export default function BasicTable(props) {
   const classes = useStyles();
   const [info,setInfo] = useState("");
 
-  useEffect(() => {
+/*   useEffect(() => {
     const fetching = async   () => {
       fetch("http://localhost:1337/paniers")
          .then((res)=>res.json())//toujours
@@ -55,7 +55,7 @@ export default function BasicTable(props) {
      }
      fetching()
    }, [])
-   console.log(info)
+   console.log(info) */
   
   return (
       <Fragment>

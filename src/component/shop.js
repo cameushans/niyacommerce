@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 
 const Shop = (props) => {
        const [hide,setHide] = useState(false)
-       const [info,setInfo] = useState("");
+       const [info,setInfo] = useState([]);
 
        const useStyles = makeStyles({
         taille:{
@@ -18,19 +18,20 @@ const Shop = (props) => {
 
     useEffect(() => {
        const fetching = async   () => {
-         fetch("http://localhost:1337/paniers")
+         fetch("http://localhost:1337/produits")
             .then((res)=>res.json())//toujours
-            .then((resu)=>setInfo(resu[0].type[0].name))
-        }
+            .then((resu)=>setInfo(resu))
+       }
         fetching()
       }, [])
       
 
 
-     var aff = ["jerry","hans","rayan","caucase","double","salop"]
+    // var aff = ["jerry","hans","rayan","caucase","double","salop"]
 
-   var renvoi = aff.map((el)=>{
-            return <ImgMediaCard nom={el}/>
+   var renvoi = info.map((el,i)=>{
+     console.log(el.image.name)
+            return <ImgMediaCard nom={el.description} images= {el.image.name} prix = {el.prix} key={i}/>
    })
       
 
