@@ -42,14 +42,16 @@ const useStyles = makeStyles({
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button  size="small" color="primary">
+      <Link to="/choice" >
+        <Button  size="small" color="primary" onClick={()=>{console.log("regarde mieu")}}>
+          
           Voir
         </Button>
-        <Link to="/choice" >
+        </Link>
+
         <Button size="small" color="primary" onClick={()=>{props.clickCkrease()}} >
             Ajouter au panier
         </Button>
-          </Link>
       </CardActions>
     </Card>
     </Grid>

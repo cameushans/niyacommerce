@@ -16,6 +16,7 @@ import logger from "redux-logger";
 import { Provider } from "react-redux";
 import { createStore ,applyMiddleware,combineReducers} from "redux";
 import Header from "./component/Header";
+import Footer from "./component/footer"
 
 
 
@@ -41,8 +42,8 @@ return (
             <Route    exact={true} path="/panier" component={BasicTable}/>
             <Route    exact={true} path="/investissement" component={Investissement}/>
 
-            <Redirect to="/"/>
      </Switch>
+     <Footer/>
      </div>
     </Provider>
   );

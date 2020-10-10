@@ -28,6 +28,7 @@ const Shop = (props) => {
 
 
     // var aff = ["jerry","hans","rayan","caucase","double","salop"]
+    console.log(info)
 
    var renvoi = info.map((el,i)=>{
      console.log(el.image.name)
@@ -37,7 +38,7 @@ const Shop = (props) => {
 
 
     return (
-        <div onClick={()=>{setHide(false);props.hideMenu()}}>
+        <div onClick={()=>{setHide(false);props.hideMenu(info)}}>
         <Typography style={{textAlign:"center", marginTop:"5%"}} variant="h2">
             Collections
         </Typography>
@@ -50,8 +51,8 @@ const Shop = (props) => {
 
 function mapDispatchToProps(dispatch){
        return {
-       hideMenu: function(){
-            dispatch({type:"HIDE"})
+       hideMenu: function(data){
+            dispatch({type:"HIDE", data:data})
        }
      }
 }
