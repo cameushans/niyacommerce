@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from '@material-ui/core'; 
 import {connect} from "react-redux";
+import {Grid}  from "@material-ui/core"
 
 const useStyles = makeStyles({
   root: {
@@ -23,36 +24,37 @@ const useStyles = makeStyles({
 
   console.log(props)
   return (
+    <Grid classeName={classes.taille}  container justify="center" item lg={4}>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="Contemplative Reptile"
           height="140"
-          image="../casquette.jpg"
-          title="Contemplative Reptile"
+          image={props.images}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+             {props.nom}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+               {props.prix}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button  size="small" color="primary">
+      <Link to="/choice" >
+        <Button  size="small" color="primary" onClick={()=>{console.log("regarde mieu")}}>
+          
           Voir
         </Button>
-        <Link to="/choice" >
+        </Link>
+
         <Button size="small" color="primary" onClick={()=>{props.clickCkrease()}} >
             Ajouter au panier
         </Button>
-          </Link>
       </CardActions>
     </Card>
+    </Grid>
   );
 }
 

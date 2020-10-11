@@ -5,63 +5,56 @@ import {connect} from "react-redux";
 
 
 const Shop = (props) => {
-    
-       const [info,setInfo] = useState("");
+       const [hide,setHide] = useState(false)
+       const [info,setInfo] = useState([]);
 
        const useStyles = makeStyles({
         taille:{
         marginTop:"10%"
         }
-    })
+        })
     
     const classes = useStyles();
 
     useEffect(() => {
        const fetching = async   () => {
-         fetch("http://localhost:1337/paniers")
+         fetch("http://localhost:1337/produits")
             .then((res)=>res.json())//toujours
-            .then((resu)=>setInfo(resu[0].type[0].name))
-        }
+            .then((resu)=>setInfo(resu))
+       }
         fetching()
       }, [])
+      
+
+
+    // var aff = ["jerry","hans","rayan","caucase","double","salop"]
+    console.log(info)
+
+   var renvoi = info.map((el,i)=>{
+     console.log(el.image.name)
+            return <ImgMediaCard nom={el.description} images= {el.image.name} prix = {el.prix} key={i}/>
+   })
+      
 
 
     return (
-        <div>
+        <div onClick={()=>{setHide(false);props.hideMenu(info)}}>
         <Typography style={{textAlign:"center", marginTop:"5%"}} variant="h2">
             Collections
         </Typography>
        <Grid   container direction="row" justify="center" alignItems="center"> 
-           <Grid classeName={classes.taille}  container justify="center" item lg={4}>
-                  <ImgMediaCard image={info} />
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info} />
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info}/>
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info}/>
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info}/>
-           </Grid>
-           <Grid container justify="center" item lg={4}>
-                  <ImgMediaCard  image={info} />
-           </Grid>
+           {renvoi}
        </Grid>
        </div>
     )
 }
 
-function MapDispatchToProps(dispatch){
-    return {
-           clickCkrease : function (){
-                 dispatch({type: "INCREASE"})
-           }
+function mapDispatchToProps(dispatch){
+       return {
+       hideMenu: function(data){
+            dispatch({type:"HIDE", data:data})
        }
-
+     }
 }
 
-export default connect(null, MapDispatchToProps)(Shop);
+export default connect(null, mapDispatchToProps)(Shop);

@@ -16,6 +16,7 @@ import logger from "redux-logger";
 import { Provider } from "react-redux";
 import { createStore ,applyMiddleware,combineReducers} from "redux";
 import Header from "./component/Header";
+import Footer from "./component/footer"
 
 
 
@@ -29,7 +30,7 @@ function App() {
 
 return (
     <Provider className="App"  store={store}>
-      <div className="App">
+      <div className="App" onClick={()=>console.log("voila")}>
       <Header/>
       <Switch>
             <Route   exact={true} path="/" component={Home}/>
@@ -41,11 +42,13 @@ return (
             <Route    exact={true} path="/panier" component={BasicTable}/>
             <Route    exact={true} path="/investissement" component={Investissement}/>
 
-            <Redirect to="/"/>
      </Switch>
+     <Footer/>
      </div>
     </Provider>
   );
 }
+
+
 
 export default App;
