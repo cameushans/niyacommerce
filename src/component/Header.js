@@ -10,6 +10,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
  const Header = (props) => {
    const [hide,setHide] = useState(false)
 
+
   const useStyles = makeStyles({
     nav:{
       display:"flex",
@@ -104,7 +105,7 @@ conteneurbtn:{
       <Avatar src="../niya.jpeg" className={classes.avatar} />
       </div>
       <div className={classes.menu}>
-      <Link className={classes.lien} to ="/"><Button className={classes.bouton}>Home</Button></Link>
+      <Link className={classes.lien} to ="/"><Button id="#Acc" className={classes.bouton}>Home</Button></Link>
       <Link className={classes.lien} to ="/shop"><Button className={classes.bouton}>Shop</Button></Link>
       <Link className={classes.lien} to ="/smile"><Button className={classes.bouton}>Smile</Button></Link>
       
