@@ -104,7 +104,7 @@ conteneurbtn:{
 
  return   (
    <Fragment>
-  <AppBar color="transparent" position="static"  className={classes.appbar}>
+  <AppBar color="white" position="fixed"  className={classes.appbar}>
     <Toolbar>
       <div className={classes.logo}>
         <Burger/>

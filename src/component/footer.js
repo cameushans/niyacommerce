@@ -9,7 +9,7 @@ const Footer = () => {
             width:"15%",
         },
         container : {
-            height:"98px"
+            height:"98px",
         },
         list: {
             padding:0
