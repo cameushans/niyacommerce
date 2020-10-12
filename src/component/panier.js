@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import {Typography,Button} from "@material-ui/core"
+import {Typography,Button, ButtonGroup} from "@material-ui/core"
 import { Grid } from '@material-ui/core';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
@@ -34,10 +34,12 @@ const useStyles = makeStyles({
     justifyContent:"space-around"
   },
   valider:{
-    backgroundColor:"#81c784",
       width:"50%",
     fontFamily:"Sansita Swashed, cursive",
     color:"black"
+  },
+  disable : {
+    fontWeight:"bolder"
   }
 });
 
@@ -82,7 +84,13 @@ export default function BasicTable(props) {
               <TableCell component="th" scope="row">
               </TableCell>
               <TableCell align="left">Casquette</TableCell>
-              <TableCell align="center">5</TableCell>
+              <TableCell align="center">
+                <ButtonGroup>
+                   <Button color="primary" variant="contained" size="small">-</Button>
+                   <Button disabled>5</Button>
+                   <Button color="primary" variant="contained" size="small">+</Button>
+                </ButtonGroup>
+              </TableCell>
               <TableCell align="right">05/10/2020</TableCell>
               <TableCell align="right">78€</TableCell>
               <TableCell align="right"><HighlightOffIcon /></TableCell>
@@ -93,7 +101,13 @@ export default function BasicTable(props) {
               <TableCell component="th" scope="row">
               </TableCell>
               <TableCell align="left">Jogging</TableCell>
-              <TableCell align="center">2</TableCell>
+              <TableCell align="center">
+                <ButtonGroup>
+                   <Button color="primary" variant="contained" size="small">-</Button>
+                   <Button disabled variant="text" className={classes.disable}>5</Button>
+                   <Button color="primary" variant="contained" size="small">+</Button>
+                </ButtonGroup>
+              </TableCell>
               <TableCell align="right">05/10/2020</TableCell>
               <TableCell align="right">54€</TableCell>
               <TableCell align="right"><HighlightOffIcon /></TableCell>
@@ -104,7 +118,13 @@ export default function BasicTable(props) {
               <TableCell component="th" scope="row">
               </TableCell>
               <TableCell align="left">Huile</TableCell>
-              <TableCell align="center">7</TableCell>
+              <TableCell align="center">
+                <ButtonGroup>
+                   <Button color="primary" variant="contained" size="small">-</Button>
+                   <Button disabled>5</Button>
+                   <Button color="primary" variant="contained" size="small">+</Button>
+                </ButtonGroup>
+              </TableCell>
               <TableCell align="right">05/10/2020</TableCell>
               <TableCell align="right">30€</TableCell>
               <TableCell align="right"><HighlightOffIcon /></TableCell>
@@ -121,8 +141,9 @@ export default function BasicTable(props) {
         </TableBody>
       </Table>
     </TableContainer>
-    <Grid container className={classes.btncmd}>
-    <Button variant="contained" className={classes.valider} color="#050F5A">Valider</Button>
+    <Grid container direction ="column" className={classes.btncmd}>
+      <Typography variant ="h5">Total :  679€</Typography>
+     <Button variant="contained" className={classes.valider} color="primary">Valider</Button>
     </Grid>
     </Grid>
     
