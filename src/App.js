@@ -56,8 +56,6 @@ return (
             <Route    exact={true} path="/investissement" component={Investissement}/>
 
      </Switch>
-     <Divider/>
-     <Footer/>
      </div>
     </Provider>
   );

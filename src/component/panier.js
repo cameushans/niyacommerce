@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   btncmd:{
     width:"20%",
     height:"10%",
-    justifyContent:"center",
+    justifyContent:"center"
     
   },
 
@@ -33,11 +33,21 @@ const useStyles = makeStyles({
     alignItems:"center",
   },
   valider:{
-      width:"50%",
+      width:"100%",
     fontFamily:"Sansita Swashed, cursive",
   },
   disable : {
     fontWeight:"bolder"
+  },
+
+  dessouspanier:{
+    height:"5%",
+    width:"30%",
+    justifyContent:"space-evenly",
+  },
+
+  total:{
+    justifyContent:"space-between"
   }
 });
 
@@ -139,10 +149,16 @@ export default function BasicTable(props) {
         </TableBody>
       </Table>
     </TableContainer>
-    <Grid container direction ="column" className={classes.btncmd}>
-      <Typography variant ="h5">Total :  679€</Typography>
+    <Grid container className={classes.dessouspanier}>
+<Typography variant="h5">Total: 650€</Typography>
+<Grid container item className={classes.btncmd}>
+
      <Button variant="contained" className={classes.valider} color="primary">Valider</Button>
-    </Grid>
+     </Grid>
+</Grid>
+
+
+
     </Grid>
     </Fragment>
   );

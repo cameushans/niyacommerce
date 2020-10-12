@@ -25,30 +25,41 @@ const Choice = (props) => {
         height:"100%"
         },
         container : {
-          marginTop:"3%",
+          marginTop:"7%",
+          height:"80%",
+          boxShadow:"5px 5px 20px 5px",
+          backgroundColor:"white"
+
         },
-        div2:{
-          height:"80vh"
+
+        description:{
+          justifyContent:"space-evenly",
         },
-        titre:{
-          textAlign:"center"
+
+        page:{
+          width:"100%",
+          height:"100%",
+          justifyContent:"center",
+          backgroundImage:"url('../../mur.jpg')",
+          backgroundSize:"cover",
+          backgroundRepeat:"no-repeat"
+        },
+        prix:{
+          height:"5%",
+          width:"15%",
+          backgroundColor:"green",
         }
     })
 
 const items = [
   {
-    src: "../../casquette.jpg",
-    caption: 'Slide 1'
+    src: "../../waves.jpg",
   },
   {
-    src: "../../casquette.jpg",
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    src: "../../waves.jpg",
   },
   {
-    src:  "../../casquette.jpg",
-    altText: 'Slide 3',
-    caption: 'Slide 3'
+    src:  "../../waves.jpg",
   }
 ];
           const classes = useStyles();
@@ -91,33 +102,30 @@ const items = [
 
           return (
             <Fragment>
-              <Typography variant="h1" className={classes.titre}>
-                       Casquette
-              </Typography>
-              <Grid container  direction="row"  justify="space-around" className={classes.container}>
-                  <Grid container item lg={8} >
-                       <Carousel
-                         activeIndex={activeIndex}
-                        next={next}
-                        previous={previous}
-                      >
-                          <CarouselIndicators style={{width:"100%"}} items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-                           {slides}
-                          <CarouselControl  direction="prev"  directionText="Previous" onClickHandler={previous} />
-                          <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-                      </Carousel>
+              <Grid container className={classes.page}>
+              <Grid container direction="row" className={classes.container} lg={10}>
+                <Grid container item lg={8} >
+                <Carousel
+                activeIndex={activeIndex}
+                next={next}
+                previous={previous}
+              >
+                <CarouselIndicators container lg={12} items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                {slides}
+                <CarouselControl direction="prev"  directionText="Previous" onClickHandler={previous} />
+                <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+              </Carousel>
                 </Grid>
                 <Divider/>
-                <Grid container item direction="column"    className={classes.div2} lg={4} >
-                         <Typography variant="h3">
-                              Becky Silk Blazer
-                        </Typography>
-                        <Typography variant="h5"> 80€</Typography>
-
+                <Grid container className={classes.description} item direction="column" lg={3} >
+                  <Typography variant="h2">
+                    La Jaguardia
+                  </Typography>
+                  <Grid item className={classes.prix}>80€</Grid>
                   <Grid item>
                        {etoile}
                   </Grid>
-                  <Accordion>
+                  <Accordion style={{borderStyle:"none"}}>
                        <AccordionSummary
                              expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
@@ -147,8 +155,9 @@ const items = [
                              </Typography>
                     </AccordionDetails>
               </Accordion>     
-              <Button variant="contained" color="primary">Ajouter au panier</Button>
+              <Button variant="contained" style={{borderRadius:"10px"}} color="primary">Ajouter au panier</Button>
                 </Grid>
+              </Grid>
               </Grid>
            </Fragment>
           );

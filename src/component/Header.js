@@ -10,6 +10,8 @@ import Burger from "./BurgerHeader";
  const Header = (props) => {
    const [hide,setHide] = useState(false)
 
+
+
   const useStyles = makeStyles({
     nav:{
       display:"flex",
@@ -95,20 +97,6 @@ conteneurbtn:{
   });
   const classes = useStyles()
 
-  var aff = ["../../casquette.jpg","../../casquette.jpg","../../casquette.jpg","../../casquette.jpg",]
-
-  var renvoi = aff.map((el)=>{
-     return  (
-       <Fragment>
-            <ListItem>
-           <img  className={classes.img} alt="casquette"  src={el}/>
-       </ListItem>
-       <Divider/>
-       </Fragment>
-           )
-  })
-     
-
 
  return   (
    <Fragment>
@@ -120,9 +108,9 @@ conteneurbtn:{
       <Avatar src="../niya.jpeg" className={classes.avatar} />
       </div>
       <div className={classes.menu}>
-      <Link className={classes.lien} to ="/"  onClick={()=>{setHide(false);props.hideMenu()}}><Button className={classes.bouton} >Home</Button></Link>
-      <Link className={classes.lien} to ="/shop"   onClick={()=>{setHide(false);props.hideMenu()}}><Button className={classes.bouton}>Shop</Button></Link>
-      <Link className={classes.lien} to ="/smile"   onClick={()=>{setHide(false);props.hideMenu()}}><Button className={classes.bouton}>Smile</Button></Link>
+      <Link className={classes.lien} to ="/"><Button id="#Acc" className={classes.bouton}>Home</Button></Link>
+      <Link className={classes.lien} to ="/shop"><Button className={classes.bouton}>Shop</Button></Link>
+      <Link className={classes.lien} to ="/smile"><Button className={classes.bouton}>Smile</Button></Link>
       
       </div>
        <Badge badgeContent={props.count} color="error">
@@ -130,8 +118,24 @@ conteneurbtn:{
        </Badge>
           <Grid container direction="column" className={classes.hidden} >
             <List>
-                {renvoi}
+              <ListItem>
+                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
+              </ListItem>
+              <Divider/>
+              <ListItem>
+                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
+              </ListItem>
+              <Divider/>
+              <ListItem>
+                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
+              </ListItem>
+              <Divider/>
+              <ListItem>
+                  <img  className={classes.img} alt="casquette"  src="../../casquette.jpg"/>
+              </ListItem>
             </List>
+            <Divider/>
+
                     <Grid item container className={classes.conteneurbtn}>
                      <Button variant ="contained" color="primary"  className={classes.btnpanier} href="/panier" sm={12} size="small">Voir panier</Button>
                      </Grid>
