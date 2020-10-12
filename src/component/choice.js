@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link,Grid, Divider} from '@material-ui/core';
-import  "./choice.css";
 import StarIcon from '@material-ui/icons/Star';
 import {
   Carousel,
@@ -27,7 +26,11 @@ const Choice = (props) => {
         height:"100%"
         },
         container : {
-          marginTop:"10%"
+          marginTop:"5%"
+        },
+
+        description:{
+          justifyContent:"space-evenly",
         }
     })
 
@@ -86,21 +89,21 @@ const items = [
 
           return (
             <Fragment>
-              <Grid container  direction="row" className={classes.container}>
+              <Grid container style={{height:"100%"}} direction="row" className={classes.container}>
                 <Grid container item lg={9} >
                 <Carousel
                 activeIndex={activeIndex}
                 next={next}
                 previous={previous}
               >
-                <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                <CarouselIndicators  items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
                 {slides}
                 <CarouselControl  direction="prev"  directionText="Previous" onClickHandler={previous} />
                 <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
               </Carousel>
                 </Grid>
                 <Divider/>
-                <Grid container item direction="column" lg={3} >
+                <Grid container className={classes.description} item direction="column" lg={3} >
                   <Typography variant="h3">
                     Le titre
                   </Typography>
