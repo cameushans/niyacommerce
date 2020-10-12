@@ -3,12 +3,16 @@ import {Link} from "react-router-dom"
 import {makeStyles,AppBar,Toolbar,Avatar,Button,Badge,Grid, Typography,Divider,List,ListItem} from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart"
 import {connect} from "react-redux";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Burger from "./BurgerHeader";
 
 
 
  const Header = (props) => {
    const [hide,setHide] = useState(false)
+   const  [width,SetWidth] = useState(window.innerWidth)
+
+   console.log(width)
+   
 
 
 
@@ -103,6 +107,7 @@ conteneurbtn:{
   <AppBar color="transparent" position="static"  className={classes.appbar}>
     <Toolbar>
       <div className={classes.logo}>
+        <Burger/>
       <Avatar src="../niya.jpeg" className={classes.avatar} />
       </div>
       <div className={classes.menu}>
@@ -140,7 +145,6 @@ conteneurbtn:{
           </Grid>
       </Toolbar>
    </AppBar>
-       
           </Fragment>
     )
 }

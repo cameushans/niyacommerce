@@ -5,7 +5,7 @@ import {Switch,Route, Redirect} from "react-router-dom"
 import Shop from "./component/shop"
 import Smile from "./component/smile"
 import Choice from "./component/choice"
-import {makeStyles,AppBar,Toolbar,Avatar,Button} from "@material-ui/core";
+import {makeStyles,AppBar,Toolbar,Avatar,Button, Divider} from "@material-ui/core";
 import BasicTable from "./component/panier";
 import {MuiThemeProvider,ThemeProvider} from "@material-ui/core"
 import HomeIcon from '@material-ui/icons/Home';
@@ -43,6 +43,7 @@ return (
             <Route    exact={true} path="/investissement" component={Investissement}/>
 
      </Switch>
+     <Divider/>
      <Footer/>
      </div>
     </Provider>
