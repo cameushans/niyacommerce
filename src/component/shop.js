@@ -25,11 +25,6 @@ const Shop = (props) => {
         fetching()
       }, [])
       
-
-
-    // var aff = ["jerry","hans","rayan","caucase","double","salop"]
-    console.log(info)
-
    var renvoi = info.map((el,i)=>{
      console.log(el.image.name)
             return <ImgMediaCard nom={el.description} images= {el.image.name} prix = {el.prix} key={i}/>

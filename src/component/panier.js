@@ -31,12 +31,10 @@ const useStyles = makeStyles({
     justifyContent:"center",
     flexDirection:"column",
     alignItems:"center",
-    justifyContent:"space-around"
   },
   valider:{
       width:"50%",
     fontFamily:"Sansita Swashed, cursive",
-    color:"black"
   },
   disable : {
     fontWeight:"bolder"
@@ -146,7 +144,6 @@ export default function BasicTable(props) {
      <Button variant="contained" className={classes.valider} color="primary">Valider</Button>
     </Grid>
     </Grid>
-    
     </Fragment>
   );
 }

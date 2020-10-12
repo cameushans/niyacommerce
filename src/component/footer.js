@@ -9,7 +9,9 @@ const Footer = () => {
             width:"15%",
         },
         container : {
-            height:"98px"
+            height:"8vh",
+            backgroundColor:"red",
+    
         },
         list: {
             padding:0
@@ -18,33 +20,25 @@ const Footer = () => {
 
     const classes = useStyles()
     return (
-        <Fragment>
               <Grid container  className={classes.container} justify="space-around">
                   <Grid item direction="column" className={classes.taille}> 
                       <Typography variant = "p">
-                      QUI SOMMES NOUS ?
-                   LE MANOIR LUXURY vous propose des vêtements et
-                    accessoires de luxe uniques venant de grands créateurs !
+                      QUI SOMMES NOUS ?         
                       </Typography>
                   </Grid>
                   <Grid item direction="column" className={classes.taille}> 
                   <List>
                               <ListItem className={classes.list}>achetez</ListItem>
-                              <ListItem className={classes.list}>Boire</ListItem>
-                              <ListItem className={classes.list}>Dansez</ListItem>
-                              <ListItem className={classes.list}>Chante</ListItem>
+                              <ListItem className={classes.list}>Boire</ListItem>                    
                           </List>
                   </Grid>
                   <Grid item direction="column" className={classes.taille}> 
                           <List>
                               <ListItem className={classes.list}>achetez</ListItem>
-                              <ListItem className={classes.list}>achetez</ListItem>
-                              <ListItem className={classes.list}>achetez</ListItem>
-                              <ListItem className={classes.list}>achetez</ListItem>
+                              <ListItem className={classes.list}>achetez</ListItem>               
                           </List>
                   </Grid>
               </Grid>
-       </Fragment>
     )
 }
 

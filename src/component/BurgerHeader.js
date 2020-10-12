@@ -12,6 +12,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import MoodIcon from '@material-ui/icons/Mood';
+import  {AppBar} from "@material-ui/core";
+import Toolbar from '@material-ui/core/Toolbar';
+
 
 const useStyles = makeStyles({
   list: {
@@ -19,6 +22,9 @@ const useStyles = makeStyles({
   },
   fullList: {
     width: 'auto',
+  },
+  back:{
+      backgroundColor:"white"
   }
 });
 
@@ -26,9 +32,7 @@ const Burger = () =>{
 
     const classes = useStyles();
     const [state, setState] = useState({
-      top: false,
       left: false,
-      right: false,
     });
 
         const toggleDrawer = (anchor, open) => (event) => {
@@ -64,16 +68,18 @@ const Burger = () =>{
 
         
           return (
+          <AppBar className={classes.back}>
             <Fragment>
-              {['left', 'right', 'top', 'bottom'].map((anchor) => (
+              {['left'].map((anchor) => (
                 <Fragment key={anchor}>
-                  <MenuIcon onClick={toggleDrawer(anchor, true)}>{anchor}</MenuIcon>
+                  <MenuIcon color="primary" onClick={toggleDrawer(anchor, true)}>{anchor}</MenuIcon>
                   <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
                     {list(anchor)}
                   </Drawer>
                 </Fragment> 
                 ))}
             </Fragment>
+            </AppBar>
           );
 }
 

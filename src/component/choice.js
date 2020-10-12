@@ -15,6 +15,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 
 const Choice = (props) => {
@@ -77,6 +78,7 @@ const items = [
                   onExiting={() => setAnimating(true)}
                   onExited={() => setAnimating(false)}
                   key={item.src}
+             
                 >
                   <img src={item.src} alt={item.altText} />
                   <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
@@ -93,13 +95,13 @@ const items = [
                        Casquette
               </Typography>
               <Grid container  direction="row"  justify="space-around" className={classes.container}>
-                  <Grid container item lg={6} >
+                  <Grid container item lg={8} >
                        <Carousel
                          activeIndex={activeIndex}
                         next={next}
                         previous={previous}
                       >
-                          <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                          <CarouselIndicators style={{width:"100%"}} items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
                            {slides}
                           <CarouselControl  direction="prev"  directionText="Previous" onClickHandler={previous} />
                           <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
@@ -153,5 +155,4 @@ const items = [
         }
         
         
-
 export default Choice;
