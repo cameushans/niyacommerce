@@ -11,61 +11,63 @@ import { Link } from '@material-ui/core';
 import {connect} from "react-redux";
 import {Grid}  from "@material-ui/core"
 
-const useStyles = makeStyles({
-  root: {
-    width: "70%",
-    marginTop:"10%"
-  },
-});
+
 
  function ImgMediaCard(props) {
+
+  const useStyles = makeStyles({
+    root: {
+      width: "70%",
+      marginTop:"10%"
+    },
+  });
+
+
   const classes = useStyles();
 
 
-  console.log(props)
   return (
     <Grid classeName={classes.taille}  container justify="center" item lg={4}>
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={props.images}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-             {props.nom}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-               {props.prix}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-      <Link to="/choice" >
-        <Button  size="small" color="primary" onClick={()=>{console.log("regarde mieu")}}>
-          
-          Voir
-        </Button>
-        </Link>
+              <Card className={classes.root}>
+                          <CardActionArea>
+                            <CardMedia
+                              component="img"
+                              height="400"
+                              image={props.images}
+                            />
+                                    <CardContent>
+                                              <Typography gutterBottom variant="h5" component="h2">
+                                                {props.nom}
+                                              </Typography>
+                                              <Typography variant="body2" color="textSecondary" component="p">
+                                                  {props.prix}
+                                              </Typography>
+                                    </CardContent>
+                          </CardActionArea>
 
-        <Button size="small" color="primary" onClick={()=>{props.clickCkrease()}} >
-            Ajouter au panier
-        </Button>
-      </CardActions>
-    </Card>
+                          <CardActions>
+                              <Link to="/choice" >
+                                      <Button  size="small" color="primary">
+                                        Voir
+                                      </Button>
+                                </Link>
+                                <Button size="small" color="primary" onClick={()=>{
+                                  props.clickCkrease()
+                                  props.addToCart(props)}} >
+                                    Ajouter au panier
+                                </Button>
+                          </CardActions>
+              </Card>
     </Grid>
-  );
-}
-
-
-
+  )
+};
 
 function MapDispatchToProps(dispatch){
   return {
          clickCkrease : function (){
                dispatch({type: "INCREASE"})
-         }
+         },
+         addToCart : (data)=>dispatch({type:"ADD_DATA",payload:data})
      }
 }
 

@@ -2,7 +2,7 @@ import React ,{Fragment, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link,Grid, Divider} from '@material-ui/core';
+import {Grid, Divider} from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
 import {
   Carousel,
@@ -15,10 +15,10 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 
 const Choice = (props) => {
+
     const useStyles = makeStyles({
         taille:{
         marginTop:"10%",
@@ -29,13 +29,10 @@ const Choice = (props) => {
           height:"80%",
           boxShadow:"5px 5px 20px 5px",
           backgroundColor:"white"
-
         },
-
         description:{
           justifyContent:"space-evenly",
         },
-
         page:{
           width:"100%",
           height:"100%",
@@ -49,7 +46,7 @@ const Choice = (props) => {
           width:"15%",
           backgroundColor:"green",
         }
-    })
+    });
 
 const items = [
   {
@@ -160,8 +157,8 @@ const items = [
               </Grid>
               </Grid>
            </Fragment>
-          );
-        }
+          )
+        };
         
         
 export default Choice;
