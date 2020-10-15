@@ -1,49 +1,42 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
-import Home from "./component/Home"
-import {Switch,Route, Redirect} from "react-router-dom"
-import Shop from "./component/shop"
-import Smile from "./component/smile"
-import Choice from "./component/choice"
-import {makeStyles,AppBar,Toolbar,Avatar,Button, Divider} from "@material-ui/core";
+import Home from "./component/Home";
+import {Switch,Route} from "react-router-dom";
+import Shop from "./component/shop";
+import Smile from "./component/smile";
+import Choice from "./component/choice";
 import BasicTable from "./component/panier";
-import {MuiThemeProvider,ThemeProvider} from "@material-ui/core"
-import HomeIcon from '@material-ui/icons/Home';
 import Investissement from './component/Investissement';
-import hide from "./reducers/hide.reducer";
 import count from "./reducers/count.reducer";
 import logger from "redux-logger";
-import { Provider } from "react-redux";
 import { createStore ,applyMiddleware,combineReducers} from "redux";
 import Header from "./component/Header";
-import Footer from "./component/footer"
-import Burger from './component/BurgerHeader'
+import Burger from './component/BurgerHeader';
+import {composeWithDevTools} from "redux-devtools-extension";
+import cartData from "./reducers/panier.reducer"
+import { persistStore, persistReducer } from 'redux-persist';/* Cache our store */ 
+import storage from "redux-persist/lib/storage";
 
 
 
+const persistConfig = {
+  key:"root",
+  storage,
+  whitelist: ["count","cartData"]
+};
 
-const store = createStore(combineReducers({count,hide}),applyMiddleware(logger));
-  
+const rootReducers = combineReducers({count,cartData});
+export const store = createStore(persistReducer(persistConfig,rootReducers),composeWithDevTools(applyMiddleware(logger)));
+export const persistor = persistStore(store);
+
+
 function App() {
-  const [infos,setInfo] = useState("");
-  const  [width,setWidth] = useState(window.innerWidth)
-
-
-  useEffect(()=>{
-
-   window.addEventListener('resize',() => setWidth(window.innerWidth))
-
-  },[])
-
+  const  [width,setWidth] = useState(window.innerWidth); 
   
-
-
-
-
+  useEffect(()=> window.addEventListener('resize',() => setWidth(window.innerWidth)),[]);
 
 return (
-    <Provider className="App"  store={store}>
-      <div className="App" onClick={()=>console.log("voila")}>
+      <div className="App" >
         {width<1200?<Burger/>:<Header/>}
       <Switch>
             <Route   exact={true} path="/" component={Home}/>
@@ -54,13 +47,9 @@ return (
             <Route    exact={true} path="/choice" component={Choice}/>
             <Route    exact={true} path="/panier" component={BasicTable}/>
             <Route    exact={true} path="/investissement" component={Investissement}/>
-
      </Switch>
      </div>
-    </Provider>
-  );
-}
-
-
+  )
+};
 
 export default App;

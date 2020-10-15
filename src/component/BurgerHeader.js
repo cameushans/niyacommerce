@@ -3,7 +3,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -13,7 +12,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import MoodIcon from '@material-ui/icons/Mood';
 import  {AppBar} from "@material-ui/core";
-import Toolbar from '@material-ui/core/Toolbar';
 
 
 const useStyles = makeStyles({
@@ -52,10 +50,12 @@ const Burger = () =>{
               onKeyDown={toggleDrawer(anchor, false)}
             >
               <List>
-                {[{icon:<HomeIcon />,listText:'Home'}, 
-               {icon:<HomeIcon />, listText:'Shop'},
-                {icon:<MoodIcon />,listText: 'Smile'},
-               {icon:<ShoppingCartIcon />,listText: 'Panier'}].map((text, index) => (
+                {[
+                  {icon:<HomeIcon />,listText:'Home'}, 
+                  {icon:<HomeIcon />, listText:'Shop'},
+                  {icon:<MoodIcon />,listText: 'Smile'},
+                 {icon:<ShoppingCartIcon />,listText: 'Panier'}
+                ].map((text, index) => (
                   <ListItem button key={index}>
                     <ListItemIcon>{text.icon}</ListItemIcon>
                     <ListItemText primary={text.listText} />
@@ -66,7 +66,6 @@ const Burger = () =>{
             </div>
           );
 
-        
           return (
           <AppBar className={classes.back}>
             <Fragment>
@@ -80,7 +79,7 @@ const Burger = () =>{
                 ))}
             </Fragment>
             </AppBar>
-          );
-}
+          )
+};
 
 export default Burger;

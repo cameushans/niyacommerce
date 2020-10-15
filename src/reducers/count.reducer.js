@@ -1,4 +1,4 @@
-export default function count (count = 0,action){
+export default function count (count = 0,action){/*pure function*/
     if(action.type === "INCREASE") {
         var newCount = count + 1
         return newCount; 
@@ -8,4 +8,4 @@ export default function count (count = 0,action){
     } else {
         return count;
     }
-}
+};
