@@ -37,7 +37,6 @@ const Choice = (props) => {
         },
 
         page:{
-          width:"100%",
           height:"100%",
           justifyContent:"center",
           backgroundImage:"url('../../mur.jpg')",
@@ -46,8 +45,7 @@ const Choice = (props) => {
         },
         prix:{
           height:"5%",
-          width:"15%",
-          backgroundColor:"green",
+          width:"15%"
         }
     })
 
@@ -102,7 +100,7 @@ const items = [
 
           return (
             <Fragment>
-              <Grid container className={classes.page}>
+              <Grid container className={classes.page} lg={12}>
               <Grid container direction="row" className={classes.container} lg={10}>
                 <Grid container item lg={8} >
                 <Carousel
@@ -155,7 +153,7 @@ const items = [
                              </Typography>
                     </AccordionDetails>
               </Accordion>     
-              <Button variant="contained" style={{borderRadius:"10px"}} color="primary">Ajouter au panier</Button>
+              <Button variant="contained" lg={5} style={{borderRadius:"10px"}} color="primary">Ajouter au panier</Button>
                 </Grid>
               </Grid>
               </Grid>
