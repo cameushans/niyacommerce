@@ -47,10 +47,7 @@ import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
        </ListItem>
     )
   }) 
-
-
-
-
+  
  return   (
    <Fragment>
         <AppBar color="white" position="fixed"  className={classes.appbar}>

@@ -1,4 +1,4 @@
-import React,{Fragment} from 'react';
+import React,{Fragment,useState,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -8,12 +8,21 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import {Typography,Button, ButtonGroup} from "@material-ui/core";
-import { Grid } from '@material-ui/core';
+import { Grid ,Box} from '@material-ui/core';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import {connect} from "react-redux"
 
 
  function BasicTable(props) {
+   const [parallax,setParallax] = useState(window.pageYOffset);
+
+  useEffect(()=>{
+       window.addEventListener("scroll",function(){
+         setParallax(window.pageYOffset)
+        console.log(parallax)
+   })
+  },[parallax])
+
 
 
   const useStyles = makeStyles({
@@ -43,15 +52,20 @@ import {connect} from "react-redux"
     },
     total:{
       justifyContent:"space-between"
+    },
+    contient:{
+      backgroundImage:"url(../../panier.jpg)",
+      height:"74vh",
+      transform:`translateY( ${parallax  * 0.12}px)`,
+      position:"static"
+    
+    },
+    absolute:{
+      position :"absolute",
+      marginTop:"-60px",
+      width:"100%"
     }
   });
-  
-
-
-
-
-
-
 
   const classes = useStyles();
 
@@ -69,17 +83,23 @@ const datas = props.data.map((el,i)=>{
                   </ButtonGroup>
                 </TableCell>
                 <TableCell align="right">05/10/2020</TableCell>
-                <TableCell align="right">{el.prix}</TableCell>
+                <TableCell align="right"><Typography >{el.prix}</Typography></TableCell>
                 <TableCell align="right"><HighlightOffIcon /></TableCell>
 </TableRow>)
 }) ;
 
   return (
-  
-  <Fragment>
-              <Typography variant="h2" className={classes.centre}>Mon panier </Typography>
+  <Fragment >
+
+    <Grid container className={classes.contient} justify="center" alignItems="center">
+              <Typography item  variant="h3"  style={{color:"white",fontWeight:"bolder"}}>
+                   Shopping page  
+              </Typography>
+   </Grid>
+
+    <Box className={classes.absolute}>
               <Grid container direction="column">
-                   <Grid container className={classes.panier} lg={12}>
+                   <Grid container className={classes.panier} lg={12} xs={12}>
                           <TableContainer component={Paper} style={{ width:"80%",boxShadow:"5px 5px 20px 5px"}}>
                             <Table aria-label="simple table">
                               <TableHead>
@@ -87,11 +107,11 @@ const datas = props.data.map((el,i)=>{
 
                                     <TableCell component="th" scope="row">
                                     </TableCell>
-                                    <TableCell align="left"><h3>Produits</h3></TableCell>
-                                    <TableCell align="center"><h3>Quantité</h3></TableCell>
-                                    <TableCell align="right"><h3>Date</h3></TableCell>
-                                    <TableCell align="right"><h3>Prix</h3></TableCell>
-                                    <TableCell align="right"><h3>Retirer</h3></TableCell>
+                                    <TableCell align="left"><Typography variant="p">PRODUITS</Typography></TableCell>
+                                    <TableCell align="center"><Typography variant="p">QUANTITÉ</Typography></TableCell>
+                                    <TableCell align="right"><Typography variant="p">DATE</Typography></TableCell>
+                                    <TableCell align="right"><Typography variant="p">PRIX</Typography></TableCell>
+                                    <TableCell align="right"><Typography variant="p">RETIRER</Typography></TableCell>
 
                                  </TableRow>
                              </TableHead>
@@ -116,6 +136,8 @@ const datas = props.data.map((el,i)=>{
                  </Grid>
               </Grid>
           </Grid>
+          </Box>
+
     </Fragment>
   )
 };

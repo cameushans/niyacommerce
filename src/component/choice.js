@@ -26,7 +26,7 @@ const Choice = (props) => {
         },
         container : {
           marginTop:"7%",
-          height:"80%",
+          height:"70%",
           boxShadow:"5px 5px 20px 5px",
           backgroundColor:"white"
         },
@@ -43,8 +43,9 @@ const Choice = (props) => {
         },
         prix:{
           height:"5%",
-          width:"15%",
-          backgroundColor:"green",
+        },
+        merde:{
+          width:"100%"
         }
     });
 
@@ -86,9 +87,10 @@ const items = [
                   onExiting={() => setAnimating(true)}
                   onExited={() => setAnimating(false)}
                   key={item.src}
+                  className={classes.merde}
              
                 >
-                  <img src={item.src} alt={item.altText} />
+                  <img src={item.src} alt={item.altText}  className={classes.merde}/>
                   <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
                 </CarouselItem>
               );
@@ -99,15 +101,16 @@ const items = [
 
           return (
             <Fragment>
-              <Grid container className={classes.page}>
-              <Grid container direction="row" className={classes.container} lg={10}>
-                <Grid container item lg={8} >
+              <Grid container  justify="center" className={classes.page} alignItems="center">
+              <Grid container  className={classes.container} lg={8} >
+                <Grid container item lg={8}  className={classes.merde}>
                 <Carousel
                 activeIndex={activeIndex}
                 next={next}
                 previous={previous}
+                className={classes.merde}
               >
-                <CarouselIndicators container lg={12} items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                <CarouselIndicators container items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
                 {slides}
                 <CarouselControl direction="prev"  directionText="Previous" onClickHandler={previous} />
                 <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
