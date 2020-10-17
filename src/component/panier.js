@@ -31,34 +31,14 @@ import {connect} from "react-redux"
         marginTop:"3%",
         marginBottom:"5%"
     },
-    btncmd:{
-      width:"20%",
-      height:"10%",
-      justifyContent:"center"
-    },
-    panier:{
-      height:"50%",
-      justifyContent:"center",
-      flexDirection:"column",
-      alignItems:"center",
-    },
-    valider:{
-      width:"100%",
-    },
     dessouspanier:{
       height:"5%",
-      width:"30%",
-      justifyContent:"space-evenly",
-    },
-    total:{
-      justifyContent:"space-between"
     },
     contient:{
       backgroundImage:"url(../../panier.jpg)",
       height:"74vh",
       transform:`translateY( ${parallax  * 0.12}px)`,
       position:"static"
-    
     },
     absolute:{
       position :"absolute",
@@ -98,9 +78,9 @@ const datas = props.data.map((el,i)=>{
    </Grid>
 
     <Box className={classes.absolute}>
-              <Grid container direction="column">
-                   <Grid container className={classes.panier} lg={12} xs={12}>
-                          <TableContainer component={Paper} style={{ width:"80%",boxShadow:"5px 5px 20px 5px"}}>
+              <Grid container direction="column"  alignItems="center">
+                   <Grid container lg={10} sm={10} item   >
+                          <TableContainer component={Paper} style={{boxShadow:"1px 1px 8px 1px"}}>
                             <Table aria-label="simple table">
                               <TableHead>
                                 <TableRow> 
@@ -129,10 +109,10 @@ const datas = props.data.map((el,i)=>{
                              </TableBody>
                      </Table>
                 </TableContainer>
-                  <Grid container direction ="row" className={classes.dessouspanier}>
+                  <Grid container justify="center" lg={10}>
 
-                    <Typography variant="h5">Total: 650€</Typography>
-                  <Button variant="contained" className={classes.valider} color="primary">Valider</Button>
+                    <Typography item variant="h5">Total: 650€</Typography>
+                   <Button item variant="contained" className={classes.valider} color="primary">Valider</Button>
                  </Grid>
               </Grid>
           </Grid>

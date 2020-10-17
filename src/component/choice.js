@@ -25,26 +25,27 @@ const Choice = (props) => {
         height:"100%"
         },
         container : {
-          marginTop:"7%",
+          marginTop:"30%",
           height:"70%",
-          boxShadow:"5px 5px 20px 5px",
-          backgroundColor:"white"
+          boxShadow:"1px 1px 10px 1px",
+          backgroundColor:"white",
+          position:"absolute"
         },
         description:{
           justifyContent:"space-evenly",
         },
         page:{
           width:"100%",
-          height:"100%",
+          height:"70%",
           justifyContent:"center",
-          backgroundImage:"url('../../mur.jpg')",
+          backgroundImage:"url('../../background-1805710_1920.jpg')",
           backgroundSize:"cover",
           backgroundRepeat:"no-repeat"
         },
         prix:{
           height:"5%",
         },
-        merde:{
+        dur:{
           width:"100%"
         }
     });
@@ -101,9 +102,9 @@ const items = [
 
           return (
             <Fragment>
-              <Grid container  justify="center" className={classes.page} alignItems="center">
-              <Grid container  className={classes.container} lg={8} >
-                <Grid container item lg={8}  className={classes.merde}>
+              <Grid container  className={classes.page} >
+              <Grid container  className={classes.container}  lg={10}  >
+                <Grid container item lg={6}  >
                 <Carousel
                 activeIndex={activeIndex}
                 next={next}
@@ -116,16 +117,16 @@ const items = [
                 <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
               </Carousel>
                 </Grid>
-                <Divider/>
-                <Grid container className={classes.description} item direction="column" lg={3} >
-                  <Typography variant="h2">
+
+                <Grid container className={classes.description} item direction="column"  lg={4} >
+                  <Typography variant="h4">
                     La Jaguardia
                   </Typography>
-                  <Grid item className={classes.prix}>80€</Grid>
+                  <Grid item className={classes.prix} >80€</Grid>
                   <Grid item>
                        {etoile}
                   </Grid>
-                  <Accordion style={{borderStyle:"none"}}>
+                  <Accordion >
                        <AccordionSummary
                              expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
@@ -134,28 +135,13 @@ const items = [
                             <Typography className={classes.heading}>Accordion 1</Typography>
                        </AccordionSummary>
                        <AccordionDetails>
-                           <Typography>
+                           <Typography variant="p">
                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
                               sit amet blandit leo lobortis eget.
                           </Typography>
                       </AccordionDetails>
-                </Accordion>
-               <Accordion>
-                     <AccordionSummary
-                          expandIcon={<ExpandMoreIcon />}
-                         aria-controls="panel1a-content"
-                        id="panel1a-header"
-                    >
-                          <Typography className={classes.heading}>Accordion 1</Typography>
-                   </AccordionSummary>
-                   <AccordionDetails>
-                             <Typography>
-                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                               sit amet blandit leo lobortis eget.
-                             </Typography>
-                    </AccordionDetails>
-              </Accordion>     
-              <Button variant="contained" style={{borderRadius:"10px"}} color="primary">Ajouter au panier</Button>
+                </Accordion> 
+              <Button variant="contained"  color="primary">Ajouter au panier</Button>
                 </Grid>
               </Grid>
               </Grid>
