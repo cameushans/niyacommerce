@@ -71,7 +71,7 @@ const Burger = () =>{
             <Fragment>
               {['left'].map((anchor) => (
                 <Fragment key={anchor}>
-                  <MenuIcon color="primary" onClick={toggleDrawer(anchor, true)}>{anchor}</MenuIcon>
+                  <MenuIcon style={{cursor:"pointer"}} color="primary" onClick={toggleDrawer(anchor, true)}>{anchor}</MenuIcon>
                   <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
                     {list(anchor)}
                   </Drawer>
