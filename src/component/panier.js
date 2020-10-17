@@ -78,8 +78,8 @@ const datas = props.data.map((el,i)=>{
    </Grid>
 
     <Box className={classes.absolute}>
-              <Grid container direction="column"  alignItems="center">
-                   <Grid container lg={10} sm={10} item   >
+              <Grid container   justify="space-around" >
+                   <Grid container lg={10} sm={10} item  className={classes.conteneur} >
                           <TableContainer component={Paper} style={{boxShadow:"1px 1px 8px 1px"}}>
                             <Table aria-label="simple table">
                               <TableHead>
