@@ -8,13 +8,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {PersistGate} from "redux-persist/integration/react"
 import { Provider } from "react-redux";
 import {store,persistor} from "./App";
+import {loadStripe} from '@stripe/stripe-js';
+import {Elements} from '@stripe/react-stripe-js';
+
+const stripPromise = loadStripe("pk_test_51GyDemFwYhRf51ZNKBURFG5arZaOMUZpWpSWfyZIgHf3qBd3At4nUWxUQdCiwPMguXOnLZv9smtaw9YsQRedTCGV00NVTMqINc");
+
+console.log(Elements)
+
+
 
 
 ReactDOM.render(
   <Provider store={store}>
        <BrowserRouter>
               <PersistGate persistor={persistor}>
-                    <App />
+                    <Elements stripe={stripPromise}>
+                          <App />
+                    </Elements>
               </PersistGate>
        </BrowserRouter>
   </Provider>

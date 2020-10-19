@@ -32,7 +32,7 @@ const Choice = (props) => {
           position:"absolute"
         },
         description:{
-          justifyContent:"space-evenly",
+          width:"40%"
         },
         page:{
           width:"100%",
@@ -47,6 +47,10 @@ const Choice = (props) => {
         },
         dur:{
           width:"100%"
+        },
+        accordion:{
+          width:"50%",
+          height:"100%"
         }
     });
 
@@ -103,8 +107,8 @@ const items = [
           return (
             <Fragment>
               <Grid container  className={classes.page} >
-              <Grid container  className={classes.container}  lg={10}  >
-                <Grid container item lg={6}  >
+              <Grid container  className={classes.container} item  lg={11}  >
+                <Grid container  className={classes.accordion} lg={6} >
                 <Carousel
                 activeIndex={activeIndex}
                 next={next}
@@ -117,8 +121,9 @@ const items = [
                 <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
               </Carousel>
                 </Grid>
-
-                <Grid container className={classes.description} item direction="column"  lg={4} >
+                <Divider/>
+            
+            <Grid containerdirection="column" lg={3}>
                   <Typography variant="h4">
                     La Jaguardia
                   </Typography>
@@ -129,10 +134,10 @@ const items = [
                   <Accordion >
                        <AccordionSummary
                              expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                           id="panel1a-header"
+                             aria-controls="panel1a-content"
+                             id="panel1a-header"
                        >
-                            <Typography className={classes.heading}>Accordion 1</Typography>
+                            <Typography className={classes.heading}>Description</Typography>
                        </AccordionSummary>
                        <AccordionDetails>
                            <Typography variant="p">

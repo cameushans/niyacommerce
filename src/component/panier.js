@@ -10,11 +10,17 @@ import Paper from '@material-ui/core/Paper';
 import {Typography,Button, ButtonGroup} from "@material-ui/core";
 import { Grid ,Box} from '@material-ui/core';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-import {connect} from "react-redux"
+import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 
  function BasicTable(props) {
-   const [parallax,setParallax] = useState(window.pageYOffset);
+   const [parallax,setParallax] = useState(window.pageYOffset);//hoisted before the assigment
+   //Function declarations are hoisted, as we just saw. But function expressions are not.
+ //  However, it's important to note that this behavior is not reliable and is subject to change in future
+ // versions of JavaScript, so it's probably best to avoid declaring functions in blocks.
+
+
 
   useEffect(()=>{
        window.addEventListener("scroll",function(){
@@ -25,7 +31,7 @@ import {connect} from "react-redux"
 
 
 
-  const useStyles = makeStyles({
+  const useStyles = makeStyles({//hoisted in completion before de assigment
     centre:{
         textAlign:"center",
         marginTop:"3%",
@@ -47,7 +53,7 @@ import {connect} from "react-redux"
     }
   });
 
-  const classes = useStyles();
+  const classes = useStyles();//hoisted
 
 const datas = props.data.map((el,i)=>{
   return   (
@@ -63,7 +69,7 @@ const datas = props.data.map((el,i)=>{
                   </ButtonGroup>
                 </TableCell>
                 <TableCell align="right">05/10/2020</TableCell>
-                <TableCell align="right"><Typography >{el.prix}</Typography></TableCell>
+                <TableCell align="right"><Typography color="secondary">{el.prix}€</Typography></TableCell>
                 <TableCell align="right"><HighlightOffIcon /></TableCell>
 </TableRow>)
 }) ;
@@ -71,11 +77,11 @@ const datas = props.data.map((el,i)=>{
   return (
   <Fragment >
 
-    <Grid container className={classes.contient} justify="center" alignItems="center">
-              <Typography item  variant="h3"  style={{color:"white",fontWeight:"bolder"}}>
-                   Shopping page  
-              </Typography>
-   </Grid>
+          <Grid container className={classes.contient} justify="center" alignItems="center">
+                    <Typography item  variant="h3"  style={{color:"white",fontWeight:"bolder"}}>
+                        Shopping page  
+                    </Typography>
+        </Grid>
 
     <Box className={classes.absolute}>
               <Grid container   justify="space-around" >
@@ -112,11 +118,13 @@ const datas = props.data.map((el,i)=>{
                   <Grid container justify="center" lg={10}>
 
                     <Typography item variant="h5">Total: 650€</Typography>
-                   <Button item variant="contained" className={classes.valider} color="primary">Valider</Button>
+                    <Link to="/payment">          
+                          <Button item variant="contained" className={classes.valider} color="primary">Valider</Button>
+                   </Link>
                  </Grid>
               </Grid>
-          </Grid>
-          </Box>
+          </Grid>     
+       </Box>
 
     </Fragment>
   )
@@ -126,6 +134,6 @@ function mapStateToProps(state){
   return {
     data:state.cartData
   }
-}
+};
 
-export default connect(mapStateToProps,null)(BasicTable)
+export default connect(mapStateToProps,null)(BasicTable);

@@ -16,6 +16,8 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import cartData from "./reducers/panier.reducer"
 import { persistStore, persistReducer } from 'redux-persist';/* Cache our store */ 
 import storage from "redux-persist/lib/storage";
+import CardPay from "./component/CardPay";
+
 
 
 
@@ -47,6 +49,8 @@ return (
             <Route    exact={true} path="/choice" component={Choice}/>
             <Route    exact={true} path="/panier" component={BasicTable}/>
             <Route    exact={true} path="/investissement" component={Investissement}/>
+            <Route    exact={true} path="/payment" component={CardPay}/>
+
      </Switch>
      </div>
   )

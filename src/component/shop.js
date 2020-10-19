@@ -23,8 +23,10 @@ const Shop = (props) => {
        }
         fetching()
       }, []);
+
+      console.log(info)
       
-     const  data = info.map((el,i)=><ImgMediaCard nom={el.description} images= {el.image.name} prix = {el.prix} key={i}/>);
+     const  data = info.map((el,i)=><ImgMediaCard nom={el.description} images= {el.image.url} prix = {el.prix} key={i}/>);
 
     return (
         <div>

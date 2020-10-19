@@ -12,7 +12,6 @@ import {connect} from "react-redux";
 import {Grid}  from "@material-ui/core"
 
 
-
  function ImgMediaCard(props) {
 
   const useStyles = makeStyles({
@@ -20,28 +19,31 @@ import {Grid}  from "@material-ui/core"
       width: "70%",
       marginTop:"10%"
     },
+    detail:{
+      display:"flex",
+      justifyContent:"space-between"
+    }
   });
-
 
   const classes = useStyles();
 
-
   return (
-    <Grid classeName={classes.taille}  container justify="center" item lg={4}>
+    <Grid container justify="center" item lg={4} spacing={10}>
               <Card className={classes.root}>
                           <CardActionArea>
                             <CardMedia
                               component="img"
                               height="400"
-                              image={props.images}
+                              image= {props.images}
                             />
-                                    <CardContent>
-                                              <Typography gutterBottom variant="h5" component="h2">
+                                    <CardContent className={classes.detail}>
+                                              <Typography gutterBottom variant="p" >
                                                 {props.nom}
                                               </Typography>
-                                              <Typography variant="body2" color="textSecondary" component="p">
-                                                  {props.prix}
+                                              <Typography variant="body2" color="secondary" component="p">
+                                                  {props.prix}€
                                               </Typography>
+                                              
                                     </CardContent>
                           </CardActionArea>
 

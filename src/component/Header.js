@@ -76,7 +76,7 @@ import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
                                     </ModalBody>
                                     <ModalFooter>
                                         <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-                                        <Button color="secondary" onClick={toggle}>Cancel</Button>
+                                        <Button color="secondary" onClick={toggle}>Panier</Button>
                                     </ModalFooter>
                       </Modal>
 
@@ -89,20 +89,9 @@ import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 function mapStateToProps(state){
       return {
         count:state.count,
-        hide:state.hide,
         data:state.cartData
       }   
     };
 
- function mapDispatchToProps(dispatch){
-        return {
-        showMenu: function(){
-              dispatch({type:"SHOW"})
-        } ,
-        hideMenu: function(){
-             dispatch({type:"HIDE"})
-        }
-      }
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, null)(Header);
