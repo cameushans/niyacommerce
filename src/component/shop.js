@@ -29,7 +29,7 @@ const Shop = (props) => {
      const  data = info.map((el,i)=><ImgMediaCard nom={el.description} images= {el.image.url} prix = {el.prix} key={i}/>);
 
     return (
-        <div>
+        <div style={{height:"100%"}}>
               <Typography style={{textAlign:"center", marginTop:"5%"}} variant="h2">
                    Collections
              </Typography>

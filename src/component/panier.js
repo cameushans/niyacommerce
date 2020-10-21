@@ -19,17 +19,12 @@ import {Link} from "react-router-dom";
    //Function declarations are hoisted, as we just saw. But function expressions are not.
  //  However, it's important to note that this behavior is not reliable and is subject to change in future
  // versions of JavaScript, so it's probably best to avoid declaring functions in blocks.
-
-
-
   useEffect(()=>{
        window.addEventListener("scroll",function(){
          setParallax(window.pageYOffset)
         console.log(parallax)
    })
   },[parallax])
-
-
 
   const useStyles = makeStyles({//hoisted in completion before de assigment
     centre:{
@@ -41,7 +36,7 @@ import {Link} from "react-router-dom";
       height:"5%",
     },
     contient:{
-      backgroundImage:"url(../../panier.jpg)",
+      backgroundImage:"url(../../black.jpg)",
       height:"74vh",
       transform:`translateY( ${parallax  * 0.12}px)`,
       position:"static"
@@ -75,7 +70,7 @@ const datas = props.data.map((el,i)=>{
 }) ;
 
   return (
-  <Fragment >
+  <div style={{height:"100%"}} >
 
           <Grid container className={classes.contient} justify="center" alignItems="center">
                     <Typography item  variant="h3"  style={{color:"white",fontWeight:"bolder"}}>
@@ -126,7 +121,7 @@ const datas = props.data.map((el,i)=>{
           </Grid>     
        </Box>
 
-    </Fragment>
+    </div>
   )
 };
 

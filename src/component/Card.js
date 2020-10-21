@@ -28,7 +28,7 @@ import {Grid}  from "@material-ui/core"
   const classes = useStyles();
 
   return (
-    <Grid container justify="center" item lg={4} spacing={10}>
+    <Grid container justify="center" item lg={4}  sm={12} spacing={6}>
               <Card className={classes.root}>
                           <CardActionArea>
                             <CardMedia
@@ -48,9 +48,9 @@ import {Grid}  from "@material-ui/core"
                           </CardActionArea>
 
                           <CardActions>
-                              <Link to="/choice" >
+                              <Link to= "/choice" >
                                       <Button  size="small" color="primary">
-                                        Voir
+                                            Voir
                                       </Button>
                                 </Link>
                                 <Button size="small" color="primary" onClick={()=>{

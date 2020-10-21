@@ -12,6 +12,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import MoodIcon from '@material-ui/icons/Mood';
 import  {AppBar} from "@material-ui/core";
+import {Link} from "react-router-dom";
+
 
 
 const useStyles = makeStyles({
@@ -51,10 +53,10 @@ const Burger = () =>{
             >
               <List>
                 {[
-                  {icon:<HomeIcon />,listText:'Home'}, 
-                  {icon:<HomeIcon />, listText:'Shop'},
-                  {icon:<MoodIcon />,listText: 'Smile'},
-                 {icon:<ShoppingCartIcon />,listText: 'Panier'}
+                  {icon:<HomeIcon />,listText:<Link to="/">Home</Link>}, 
+                  {icon:<HomeIcon />, listText:<Link to="/shop">Shop</Link>},
+                  {icon:<MoodIcon />,listText: <Link to="/smile">Smile</Link>},
+                 {icon:<ShoppingCartIcon />,listText: <Link to="/panier">Panier</Link>}
                 ].map((text, index) => (
                   <ListItem button key={index}>
                     <ListItemIcon>{text.icon}</ListItemIcon>

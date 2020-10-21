@@ -17,6 +17,8 @@ import cartData from "./reducers/panier.reducer"
 import { persistStore, persistReducer } from 'redux-persist';/* Cache our store */ 
 import storage from "redux-persist/lib/storage";
 import CardPay from "./component/CardPay";
+import Footer from './component/footer';
+import {Grid} from "@material-ui/core"
 
 
 
@@ -50,8 +52,8 @@ return (
             <Route    exact={true} path="/panier" component={BasicTable}/>
             <Route    exact={true} path="/investissement" component={Investissement}/>
             <Route    exact={true} path="/payment" component={CardPay}/>
-
      </Switch>
+
      </div>
   )
 };

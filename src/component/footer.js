@@ -10,8 +10,10 @@ const Footer = () => {
         },
         container : {
             height:"8vh",
-            backgroundColor:"red",
-    
+            backgroundColor:"grey",
+            position:"absolute",
+            marginTop:"%"
+         
         },
         list: {
             padding:0

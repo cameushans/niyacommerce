@@ -26,19 +26,19 @@ const Choice = (props) => {
         },
         container : {
           marginTop:"30%",
-          height:"70%",
+          height:"50vh",
+
           boxShadow:"1px 1px 10px 1px",
           backgroundColor:"white",
           position:"absolute"
         },
         description:{
-          width:"40%"
+          width:"20%"
         },
         page:{
           width:"100%",
           height:"70%",
-          justifyContent:"center",
-          backgroundImage:"url('../../background-1805710_1920.jpg')",
+          backgroundImage:"url('../../black.jpg')",
           backgroundSize:"cover",
           backgroundRepeat:"no-repeat"
         },
@@ -49,7 +49,6 @@ const Choice = (props) => {
           width:"100%"
         },
         accordion:{
-          width:"50%",
           height:"100%"
         }
     });
@@ -92,10 +91,10 @@ const items = [
                   onExiting={() => setAnimating(true)}
                   onExited={() => setAnimating(false)}
                   key={item.src}
-                  className={classes.merde}
              
                 >
-                  <img src={item.src} alt={item.altText}  className={classes.merde}/>
+                  <img src={item.src} alt={item.altText}  style={{width:"100%"}}
+/>
                   <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
                 </CarouselItem>
               );
@@ -105,25 +104,23 @@ const items = [
           var etoile =  najm.map(el=><StarIcon />)
 
           return (
-            <Fragment>
-              <Grid container  className={classes.page} >
-              <Grid container  className={classes.container} item  lg={11}  >
-                <Grid container  className={classes.accordion} lg={6} >
+            <Fragment >
+              <Grid container  className={classes.page} justify="center" >
+              <Grid container  className={classes.container} item  spacing={4} lg={9} md={12} >
+                <Grid container  className={classes.accordion}  lg={6}  >
                 <Carousel
                 activeIndex={activeIndex}
                 next={next}
                 previous={previous}
                 className={classes.merde}
               >
-                <CarouselIndicators container items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
                 {slides}
                 <CarouselControl direction="prev"  directionText="Previous" onClickHandler={previous} />
                 <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
               </Carousel>
                 </Grid>
-                <Divider/>
-            
-            <Grid containerdirection="column" lg={3}>
+                <Grid direction="column"  item  lg={5} alignItems="center"> 
                   <Typography variant="h4">
                     La Jaguardia
                   </Typography>
@@ -150,6 +147,12 @@ const items = [
                 </Grid>
               </Grid>
               </Grid>
+              <div style={{height:"900px"}}>
+
+              </div>
+              <di>
+
+              </di>
            </Fragment>
           )
         };

@@ -10,21 +10,19 @@ const Home = (props) =>{
 
     const useStyles = makeStyles({
         root: {
-          backgroundImage:"url(' ../../ecommerce.jpg')",
+          backgroundImage:"url(' ../../black.jpg')",
           backgroundRepeat:"no-repeat",
           backgroundSize:"cover",
-          width:"100%",
-          height:"50%",
+          height:"100%",
           alignItems:"center",
           justifyContent:"center",
           color:"white",
         },
         rootTwo: {
-            backgroundImage:"url(' ../../paysagev.jpg')",
+            backgroundImage:"url(' ../../daisy.jpg')",
             backgroundRepeat:"no-repeat",
             backgroundSize:"cover",
-            width:"100%",
-            height:"50%",
+            height:"100%",
             alignItems:"center",
             justifyContent:"center",
             color:"white",
@@ -33,7 +31,7 @@ const Home = (props) =>{
             height:"100%",
         },
         link:{
-            textDecoration:"none"
+            textDecorationColor:"red"
         },
         title:{
             width:"100%",
@@ -59,10 +57,10 @@ const Home = (props) =>{
     return (
         <Grid container 
              direction="row"
-             justify="center"
+      
              className={classes.contient} >
 
-                        <Grid container item direction="column" className={classes.root}>
+                        <Grid container item className={classes.root} lg={12}>
                                  <Link className={classes.link} to="/Shop">
                                 <Button  variant="contained" className={classes.btnshop} size="large">
                                     <CardGiftcardIcon />
@@ -71,14 +69,14 @@ const Home = (props) =>{
                                 </Link>
                         </Grid>
 
-                       <Grid container item direction="column" className={classes.rootTwo}>
+                {/*        <Grid container item direction="column" className={classes.rootTwo} lg={6}>
                             <Link className={classes.link} to="/Smile">
                                <Button variant="contained" className={classes.btnsmile} size="large">
                                     <InsertEmoticonIcon />
                                     <Typography variant="h7" className={classes.typo}>Smile</Typography>
                               </Button>
                             </Link>
-                        </Grid>
+                        </Grid> */}
 
                 </Grid>
     )

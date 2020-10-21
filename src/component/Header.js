@@ -28,7 +28,7 @@ import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
       width:"11%"
     },
     appbar:{
-      height:"8%",
+      height:"7.3%",
       zIndex:7
     },
     shoppcard:{
@@ -54,13 +54,15 @@ import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
             <Toolbar>
 
                       <div className={classes.logo}>
-                              <Avatar src="../niya.jpeg" className={classes.avatar} />
+                        <Link to="/">
+                            <Avatar src="../niya.jpeg" className={classes.avatar} />
+                        </Link>
                       </div>
 
                       <div className={classes.menu}>
-                              <Link className={classes.lien} to ="/"><Button id="#Acc" className={classes.bouton}>Home</Button></Link>
-                              <Link className={classes.lien} to ="/shop"><Button className={classes.bouton}>Shop</Button></Link>
-                              <Link className={classes.lien} to ="/smile"><Button className={classes.bouton}>Smile</Button></Link>
+                              <Link className={classes.lien}  to ="/"><Button >Home</Button></Link>
+                              <Link className={classes.lien} to ="/shop"><Button >Shop</Button></Link>
+                              <Link className={classes.lien} to ="/smile"><Button >Smile</Button></Link>
                       </div>
 
                       <Badge badgeContent={props.count} color="error">
@@ -75,8 +77,10 @@ import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
                                         </List>
                                     </ModalBody>
                                     <ModalFooter>
-                                        <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-                                        <Button color="secondary" onClick={toggle}>Panier</Button>
+                                        <Button color="primary" onClick={toggle}>Retour</Button>{' '}
+                                        <Link to="/panier">
+                                             <Button color="secondary" onClick={toggle}>Panier</Button>
+                                        </Link>
                                     </ModalFooter>
                       </Modal>
 
