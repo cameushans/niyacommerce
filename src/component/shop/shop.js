@@ -1,18 +1,14 @@
 import React , {useEffect,useState} from 'react';
-import {Typography,Grid,makeStyles} from "@material-ui/core";
-import ImgMediaCard from "./Card";
+import {Typography,Grid} from "@material-ui/core";
+import ImgMediaCard from "../card/Card";
 import {connect} from "react-redux";
+import useStyles from "./shop.style"
 
 
 const Shop = (props) => {
        const [info,setInfo] = useState([]);
 
-       const useStyles = makeStyles({
-        taille:{
-        marginTop:"10%"
-        }
-        });
-    
+
       const classes = useStyles();
 
      useEffect(() => {
@@ -23,8 +19,6 @@ const Shop = (props) => {
        }
         fetching()
       }, []);
-
-      console.log(info)
       
      const  data = info.map((el,i)=><ImgMediaCard nom={el.description} images= {el.image.url} prix = {el.prix} key={i}/>);
 

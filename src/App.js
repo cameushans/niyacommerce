@@ -1,23 +1,23 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
-import Home from "./component/Home";
+import Home from "./component/home/Home";
 import {Switch,Route} from "react-router-dom";
-import Shop from "./component/shop";
-import Smile from "./component/smile";
-import Choice from "./component/choice";
-import BasicTable from "./component/panier";
+import Shop from "./component/shop/shop";
+import Smile from "./component/smile/smile";
+import Choice from "./component/choice/choice";
+import BasicTable from "./component/panier/panier";
 import Investissement from './component/Investissement';
 import count from "./reducers/count.reducer";
 import logger from "redux-logger";
 import { createStore ,applyMiddleware,combineReducers} from "redux";
-import Header from "./component/Header";
-import Burger from './component/BurgerHeader';
+import Header from "./component/header/Header";
+import Burger from './component/burgerHeader/BurgerHeader';
 import {composeWithDevTools} from "redux-devtools-extension";
 import cartData from "./reducers/panier.reducer"
 import { persistStore, persistReducer } from 'redux-persist';/* Cache our store */ 
 import storage from "redux-persist/lib/storage";
-import CardPay from "./component/CardPay";
-import Footer from './component/footer';
+import CardPay from "./component/cardPay/CardPay";
+import Footer from './component/footer/footer';
 import {Grid} from "@material-ui/core"
 
 

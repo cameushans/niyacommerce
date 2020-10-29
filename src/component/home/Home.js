@@ -1,56 +1,12 @@
 import React from 'react';
-import {Grid,makeStyles,Typography,Button} from "@material-ui/core";
+import {Grid,Typography,Button} from "@material-ui/core";
 import {Link} from "react-router-dom";
-import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
 import {connect} from "react-redux";
+import useStyles from "./Home.style"
 
 
 const Home = (props) =>{
-
-    const useStyles = makeStyles({
-        root: {
-          backgroundImage:"url(' ../../black.jpg')",
-          backgroundRepeat:"no-repeat",
-          backgroundSize:"cover",
-          height:"100%",
-          alignItems:"center",
-          justifyContent:"center",
-          color:"white",
-        },
-        rootTwo: {
-            backgroundImage:"url(' ../../daisy.jpg')",
-            backgroundRepeat:"no-repeat",
-            backgroundSize:"cover",
-            height:"100%",
-            alignItems:"center",
-            justifyContent:"center",
-            color:"white",
-          },
-        contient:{
-            height:"100%",
-        },
-        link:{
-            textDecorationColor:"red"
-        },
-        title:{
-            width:"100%",
-            justifyContent:"center",
-        },
-        typo:{
-            textDecoration:"none",
-             color:"#000000",
-             fontFamily:"Sansita Swashed, cursive",
-             fontWeight:"bold",
-             marginLeft:"3%"
-        },
-        btnsmile:{
-            background:"linear-gradient(#ffffff,#6B268C)"
-        },
-        btnshop:{
-            background:"linear-gradient( #C6CACD,#ffffff)"
-        }
-      });
 
      const classes = useStyles();
 

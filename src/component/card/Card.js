@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -9,21 +8,12 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from '@material-ui/core'; 
 import {connect} from "react-redux";
-import {Grid}  from "@material-ui/core"
+import {Grid}  from "@material-ui/core";
+import useStyles from "./Card.style";
 
 
  function ImgMediaCard(props) {
 
-  const useStyles = makeStyles({
-    root: {
-      width: "70%",
-      marginTop:"10%"
-    },
-    detail:{
-      display:"flex",
-      justifyContent:"space-between"
-    }
-  });
 
   const classes = useStyles();
 

@@ -1,44 +1,17 @@
 import React ,{Fragment,useState} from 'react';
 import {Link} from "react-router-dom";
-import {makeStyles,AppBar,Toolbar,Avatar,Button,Badge,List,ListItem, Typography} from "@material-ui/core";
+import {AppBar,Toolbar,Avatar,Button,Badge,List,ListItem, Typography} from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import {connect} from "react-redux";
 import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import useStyles from "./Header.style"
 
 
  const Header = (props) => {
   const {className} = props;
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-
-  const useStyles = makeStyles({
-    lien:{
-      textDecoration:"none"
-    },
-    menu:{
-      display:"flex",
-      justifyContent:"space-around",
-      width:"60%"
-    },
-    img:{
-      width:"30%",
-      height:"40%"
-    },
-    avatar:{
-      width:"11%"
-    },
-    appbar:{
-      height:"7.3%",
-      zIndex:7
-    },
-    shoppcard:{
-      cursor:"pointer",
-    },
-  });
-
-
   const classes = useStyles();
-
   const item = props.data.map((el,i)=>{
     return (
       <ListItem>
@@ -96,6 +69,5 @@ function mapStateToProps(state){
         data:state.cartData
       }   
     };
-
 
 export default connect(mapStateToProps, null)(Header);

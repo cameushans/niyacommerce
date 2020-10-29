@@ -1,72 +1,36 @@
 import React ,{Fragment, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {Grid, Divider} from '@material-ui/core';
+import {Grid} from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
+import {Carousel,CarouselItem, CarouselControl,CarouselIndicators,
+   CarouselCaption
 } from 'reactstrap';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import useStyles from "./choice.style"
 
 
 const Choice = (props) => {
 
-    const useStyles = makeStyles({
-        taille:{
-        marginTop:"10%",
-        height:"100%"
-        },
-        container : {
-          marginTop:"30%",
-          height:"50vh",
+  const classes = useStyles();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
 
-          boxShadow:"1px 1px 10px 1px",
-          backgroundColor:"white",
-          position:"absolute"
-        },
-        description:{
-          width:"20%"
-        },
-        page:{
-          width:"100%",
-          height:"70%",
-          backgroundImage:"url('../../black.jpg')",
-          backgroundSize:"cover",
-          backgroundRepeat:"no-repeat"
-        },
-        prix:{
-          height:"5%",
-        },
-        dur:{
-          width:"100%"
-        },
-        accordion:{
-          height:"100%"
-        }
-    });
-
-const items = [
-  {
-    src: "../../waves.jpg",
-  },
-  {
-    src: "../../waves.jpg",
-  },
-  {
-    src:  "../../waves.jpg",
-  }
-];
-          const classes = useStyles();
-            const [activeIndex, setActiveIndex] = useState(0);
-            const [animating, setAnimating] = useState(false);
+  const items = [
+    {
+      src: "../../waves.jpg",
+    },
+    {
+      src: "../../waves.jpg",
+    },
+    {
+      src:  "../../waves.jpg",
+    }
+  ];
+      
           
             const next = () => {
               if (animating) return;

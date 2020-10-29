@@ -1,7 +1,6 @@
 import React,{Fragment,useState} from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -13,20 +12,10 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import MoodIcon from '@material-ui/icons/Mood';
 import  {AppBar} from "@material-ui/core";
 import {Link} from "react-router-dom";
+import useStyles from "./BurgerHeader.style"
 
 
 
-const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-  back:{
-      backgroundColor:"white"
-  }
-});
 
 const Burger = () =>{
 
