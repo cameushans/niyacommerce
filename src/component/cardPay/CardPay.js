@@ -16,7 +16,7 @@ const CardPay = ( props ) =>{
         <Typography variant="h3" className={classes.typo}>Finalise ta commande</Typography>
 
 
-    <Grid   container  justify="center" >
+    <Grid   container  justify="center" alignItems="center" >
         <Grid container item direction="column" lg={3}  alignItems="center" justify="center">
         <form  style={{width:"100%"}}>
         <TextField id="outlined-search" label="Nom"  type="text"   variant="outlined" className={classes.card}/>

@@ -13,14 +13,10 @@ import { createStore ,applyMiddleware,combineReducers} from "redux";
 import Header from "./component/header/Header";
 import Burger from './component/burgerHeader/BurgerHeader';
 import {composeWithDevTools} from "redux-devtools-extension";
-import cartData from "./reducers/panier.reducer"
+import cartData from "./reducers/panier.reducer";
 import { persistStore, persistReducer } from 'redux-persist';/* Cache our store */ 
 import storage from "redux-persist/lib/storage";
 import CardPay from "./component/cardPay/CardPay";
-import Footer from './component/footer/footer';
-import {Grid} from "@material-ui/core"
-
-
 
 
 const persistConfig = {
@@ -40,7 +36,7 @@ function App() {
   useEffect(()=> window.addEventListener('resize',() => setWidth(window.innerWidth)),[]);
 
 return (
-      <div className="App" >
+  <div className="App" >
         {width<1200?<Burger/>:<Header/>}
       <Switch>
             <Route   exact={true} path="/" component={Home}/>
@@ -53,8 +49,7 @@ return (
             <Route    exact={true} path="/investissement" component={Investissement}/>
             <Route    exact={true} path="/payment" component={CardPay}/>
      </Switch>
-
-     </div>
+  </div>
   )
 };
 

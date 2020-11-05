@@ -1,8 +1,7 @@
 
-import React,{Fragment,useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-const [parallax,setParallax] = useState(window.pageYOffset);
 const useStyles = makeStyles({//hoisted in completion before de assigment
     centre:{
         textAlign:"center",
@@ -25,4 +24,4 @@ const useStyles = makeStyles({//hoisted in completion before de assigment
     }
   });
 
-  export default useStyles;
+  export default useStyles

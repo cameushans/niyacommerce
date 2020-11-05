@@ -1,4 +1,4 @@
-import React,{Fragment,useState,useEffect} from 'react';
+import React,{useState,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -15,62 +15,60 @@ import {Link} from "react-router-dom";
 
 
  function BasicTable(props) {
-   const [parallax,setParallax] = useState(window.pageYOffset);//hoisted before the assigment
-   //Function declarations are hoisted, as we just saw. But function expressions are not.
- //  However, it's important to note that this behavior is not reliable and is subject to change in future
- // versions of JavaScript, so it's probably best to avoid declaring functions in blocks.
-  useEffect(()=>{
+   const [parallax,setParallax] = useState(window.pageYOffset);
+ 
+   useEffect(()=>{
        window.addEventListener("scroll",function(){
          setParallax(window.pageYOffset)
-        console.log(parallax)
    })
-  },[parallax])
+  },[parallax]);
 
-  const useStyles = makeStyles({//hoisted in completion before de assigment
-    centre:{
-        textAlign:"center",
-        marginTop:"3%",
-        marginBottom:"5%"
-    },
-    dessouspanier:{
-      height:"5%",
-    },
-    contient:{
-      backgroundImage:"url(../../black.jpg)",
-      height:"74vh",
-      transform:`translateY( ${parallax  * 0.12}px)`,
-      position:"static"
-    },
-    absolute:{
-      position :"absolute",
-      marginTop:"-60px",
-      width:"100%"
-    }
-  });
+  const datas = props.data.map((el,i)=>{
+                return   (
+                      <TableRow >
+                                      <TableCell component="th" scope="row">
+                                      </TableCell>
+                                      <TableCell align="left">{el.images}</TableCell>
+                                      <TableCell align="center">
+                                         <ButtonGroup>
+                                            <Button color="primary" variant="contained" size="small">-</Button>
+                                            <Button disabled>5</Button>
+                                            <Button color="primary" variant="contained" size="small">+</Button>
+                                        </ButtonGroup>
+                                      </TableCell>
+                                      <TableCell align="right">05/10/2020</TableCell>
+                                      <TableCell align="right"><Typography color="secondary">{el.prix}€</Typography></TableCell>
+                                      <TableCell align="right"><HighlightOffIcon /></TableCell>
+                      </TableRow>
+              )
+              }) ;
+   const useStyles = makeStyles({//hoisted in completion before de assigment
+                centre:{
+                    textAlign:"center",
+                    marginTop:"3%",
+                    marginBottom:"5%"
+                },
+                dessouspanier:{
+                  height:"5%",
+                },
+                contient:{
+                  backgroundImage:"url(../../black.jpg)",
+                  height:"74vh",
+                  transform:`translateY( ${parallax  * 0.12}px)`,
+                  position:"static"
+                },
+                absolute:{
+                  position :"absolute",
+                  marginTop:"-60px",
+                }
+              });
 
-  const classes = useStyles();//hoisted
+    const classes = useStyles();//hoisted
 
-const datas = props.data.map((el,i)=>{
-  return   (
-<TableRow >
-                <TableCell component="th" scope="row">
-                </TableCell>
-                <TableCell align="left">{el.images}</TableCell>
-                <TableCell align="center">
-                  <ButtonGroup>
-                    <Button color="primary" variant="contained" size="small">-</Button>
-                    <Button disabled>5</Button>
-                    <Button color="primary" variant="contained" size="small">+</Button>
-                  </ButtonGroup>
-                </TableCell>
-                <TableCell align="right">05/10/2020</TableCell>
-                <TableCell align="right"><Typography color="secondary">{el.prix}€</Typography></TableCell>
-                <TableCell align="right"><HighlightOffIcon /></TableCell>
-</TableRow>)
-}) ;
+            
 
   return (
-  <div style={{height:"100%"}} >
+  <div style={{width:"100%"}} >
 
           <Grid container className={classes.contient} justify="center" alignItems="center">
                     <Typography item  variant="h3"  style={{color:"white",fontWeight:"bolder"}}>
@@ -78,10 +76,10 @@ const datas = props.data.map((el,i)=>{
                     </Typography>
         </Grid>
 
-    <Box className={classes.absolute}>
-              <Grid container   justify="space-around" >
-                   <Grid container lg={10} sm={10} item  className={classes.conteneur} >
-                          <TableContainer component={Paper} style={{boxShadow:"1px 1px 8px 1px"}}>
+    <Box >
+              <Grid container  lg={12} xs={12}   justify="center" className={classes.absolute} >
+                   <Grid container  lg={10} xs={12} item  justify="center">
+                          <TableContainer component={Paper}>
                             <Table aria-label="simple table">
                               <TableHead>
                                 <TableRow> 
