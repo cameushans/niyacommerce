@@ -7,7 +7,10 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import useStyles from "./choice.style"
+import useStyles from "./choice.style";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import CallIcon from '@material-ui/icons/Call';
+
 
 
 const Choice = (props) => {
@@ -26,7 +29,7 @@ const Choice = (props) => {
             <Fragment >
               <Grid container  className={classes.page} justify="center"  lg={12}>
               <Grid container  className={classes.container} item  lg={11} >
-               <Grid container lg={6} >
+               <Grid container lg={6} xs={12}>
                  <img src="../../../casquette.jpg"></img>
               </Grid> 
               <Grid container item lg={5} justify="center">
@@ -53,7 +56,13 @@ const Choice = (props) => {
                           </Typography>
                       </AccordionDetails>
                 </Accordion> 
-              <Button variant="contained"  color="primary">Ajouter au panier</Button> 
+              <Button variant="contained"  color="primary"><ShoppingCartIcon/>Ajouter au panier</Button> 
+              <Typography>
+                Have questions about this product (SKU: 0X2E615)
+              </Typography>
+              <Typography>
+                   <CallIcon/>  019638111777
+              </Typography>
               </Grid>
                 </Grid>
               </Grid>

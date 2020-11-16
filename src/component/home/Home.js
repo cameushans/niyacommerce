@@ -3,7 +3,8 @@ import {Grid,Typography,Button} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
 import {connect} from "react-redux";
-import useStyles from "./Home.style"
+import useStyles from "./Home.style";
+import "./home.css";
 
 
 const Home = (props) =>{
@@ -17,7 +18,7 @@ const Home = (props) =>{
              className={classes.contient} >
 
                         <Grid container item className={classes.root} lg={12}>
-                                 <Link className={classes.link} to="/Shop">
+                                 <Link className="slide-in-elliptic-top-fwd" to="/Shop">
                                 <Button  variant="contained" className={classes.btnshop} size="large">
                                     <CardGiftcardIcon />
                                     <Typography variant="h7"className={classes.typo}>Shop</Typography>

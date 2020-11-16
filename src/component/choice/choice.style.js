@@ -8,7 +8,6 @@ const useStyles = makeStyles({
     },
     container : {
       marginTop:"30%",
-      background:"black",
       boxShadow:"1px 1px 10px 1px",
       position:"absolute"
     },

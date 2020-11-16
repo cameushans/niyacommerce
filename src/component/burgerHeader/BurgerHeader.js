@@ -12,7 +12,8 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import MoodIcon from '@material-ui/icons/Mood';
 import  {AppBar} from "@material-ui/core";
 import {Link} from "react-router-dom";
-import useStyles from "./BurgerHeader.style"
+import useStyles from "./BurgerHeader.style";
+
 
 
 

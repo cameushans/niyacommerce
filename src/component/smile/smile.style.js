@@ -7,7 +7,7 @@ const useStyle = makeStyles({
         width:"100%",
         backgroundImage:"url('../../inves.jpg')",
         borderRadius:"10px",
-        boxShadow:"5px 5px 5px black",
+        boxShadow:"5px 5px  5px black",
     },
     conteneur:{
     height:"100%",

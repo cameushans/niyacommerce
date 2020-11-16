@@ -41,7 +41,8 @@ const useStyles = makeStyles({
     },
     btnshop:{
         background:"linear-gradient( #C6CACD,#ffffff)"
-    }
+    },
+    
   });
 
   export default useStyles;
