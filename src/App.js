@@ -17,6 +17,7 @@ import cartData from "./reducers/panier.reducer";
 import { persistStore, persistReducer } from 'redux-persist';/* Cache our store */ 
 import storage from "redux-persist/lib/storage";
 import Copyright from "./component/cardPay/check";
+import Footer from "./component/footer/footer"
 
 
 const persistConfig = {
@@ -49,6 +50,7 @@ return (
             <Route    exact={true} path="/investissement" component={Investissement}/>
             <Route    exact={true} path="/payment" component={Copyright}/>
      </Switch>
+     <Footer/>
   </div>
   )
 };

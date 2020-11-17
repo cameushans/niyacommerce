@@ -17,9 +17,9 @@ const Home = (props) =>{
       
              className={classes.contient} >
 
-                        <Grid container item className={classes.root} lg={12}>
-                                 <Link className="slide-in-elliptic-top-fwd" to="/Shop">
-                                <Button  variant="contained" className={classes.btnshop} size="large">
+                        <Grid container item className={classes.root} lg={12} id="kenburns-top">
+                                 <Link className={classes.link} to="/Shop">
+                                <Button  variant="outlined" color="transparent" size="large">
                                     <CardGiftcardIcon />
                                     <Typography variant="h7"className={classes.typo}>Shop</Typography>
                                 </Button>

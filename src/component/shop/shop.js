@@ -21,7 +21,6 @@ const Shop = (props) => {
       }, []);
 
 
-      console.log(info)
      const  data = info.map((el,i)=><ImgMediaCard  nom={el.description} images={el.image.url} prix = {el.prix} key={i}/>);
 
     return (

@@ -9,6 +9,7 @@ const useStyles = makeStyles({
       alignItems:"center",
       justifyContent:"center",
       color:"white",
+      overflowX: "hidden",
     },
     rootTwo: {
         backgroundImage:"url(' ../../daisy.jpg')",
@@ -21,9 +22,11 @@ const useStyles = makeStyles({
       },
     contient:{
         height:"100%",
+        overflowX: "hidden",
+
     },
     link:{
-        textDecorationColor:"red"
+        textDecoration:"none"
     },
     title:{
         width:"100%",
@@ -31,9 +34,7 @@ const useStyles = makeStyles({
     },
     typo:{
         textDecoration:"none",
-         color:"#000000",
-         fontFamily:"Sansita Swashed, cursive",
-         fontWeight:"bold",
+         color:"white",
          marginLeft:"3%"
     },
     btnsmile:{

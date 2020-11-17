@@ -9,16 +9,14 @@ const useStyles = makeStyles({
     container : {
       marginTop:"30%",
       boxShadow:"1px 1px 10px 1px",
-      position:"absolute"
+      height:"50%"
     },
     description:{
       width:"20%"
     },
     page:{
       width:"100%",
-      backgroundImage:"url('../../black.jpg')",
-      backgroundSize:"cover",
-      backgroundRepeat:"no-repeat"
+
     },
     prix:{
       height:"5%",
@@ -26,6 +24,13 @@ const useStyles = makeStyles({
     dur:{
       width:"100%"
     },
+    buttonTypoStyle: {
+      paddingLeft:"10px"
+    },
+    divider: {
+      marginBottom:"2%",
+      marginTop:"2%"
+    }
  
 });
 

@@ -38,7 +38,7 @@ import useStyles from "./Card.style";
                           </CardActionArea>
 
                           <CardActions>
-                              <Link to= "/choice" >
+                              <Link to = "/choice" >
                                       <Button  size="small" color="primary">
                                             Voir
                                       </Button>
