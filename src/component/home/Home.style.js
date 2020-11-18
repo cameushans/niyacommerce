@@ -2,7 +2,7 @@ import {Grid,makeStyles,Typography,Button} from "@material-ui/core";
 
 const useStyles = makeStyles({
     root: {
-      backgroundImage:"url(' ../../black.jpg')",
+      backgroundImage:"url(' ../../blackp.jpeg')",
       backgroundRepeat:"no-repeat",
       backgroundSize:"cover",
       height:"100%",
